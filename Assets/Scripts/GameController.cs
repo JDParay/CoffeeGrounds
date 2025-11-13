@@ -28,6 +28,16 @@ public class RPSGameController : MonoBehaviour
     [Header("Coffee Meter")]
     public CoffeeMeter coffeeMeter;
 
+    [Header("Player Ability")]
+public UnityEngine.UI.Button abilityButton;
+    private int playerWinStreak = 0;
+    private bool abilityReady = false;
+    private bool abilityActive = false;
+    public TMPro.TextMeshProUGUI probabilityText;
+
+    private RPSChoice? lastPlayerChoice = null;
+
+
     void Start()
     {
         // Subscribe clicks
@@ -55,42 +65,93 @@ public class RPSGameController : MonoBehaviour
     }
 
     void PlayerChose(RPSChoice playerChoice)
+{
+    // Enemy chooses with adaptive AI
+    RPSChoice enemyChoice = GetAdaptiveEnemyChoice();
+    lastPlayerChoice = playerChoice;
+    Debug.Log($"You: {playerChoice} | Enemy: {enemyChoice}");
+
+    int result = DetermineWinner(playerChoice, enemyChoice);
+    HideAll();
+
+    EnemyReaction chosen = GetEnemyReaction(enemyChoice);
+
+    if (result == 1)
     {
-        RPSChoice enemyChoice = (RPSChoice)Random.Range(0, 3);
-        Debug.Log($"You: {playerChoice} | Enemy: {enemyChoice}");
+        // Player wins -> enemy mad
+        chosen.mad.gameObject.SetActive(true);
+        Debug.Log("You Win!");
+        if (coffeeMeter != null)
+            coffeeMeter.Increase();
 
-        int result = DetermineWinner(playerChoice, enemyChoice);
-        HideAll();
-
-        EnemyReaction chosen = GetEnemyReaction(enemyChoice);
-
-        if (result == 1)
+        // --- Win streak logic ---
+        playerWinStreak++;
+        if (playerWinStreak >= 3)
         {
-            // Player wins -> enemy mad
-            chosen.mad.gameObject.SetActive(true);
-            Debug.Log("You Win!");
-            if (coffeeMeter != null)
-                coffeeMeter.Increase();
-        }
-        else if (result == -1)
-        {
-            // Enemy wins -> enemy happy
-            chosen.happy.gameObject.SetActive(true);
-            Debug.Log("Enemy Wins!");
-            if (coffeeMeter != null)
-                coffeeMeter.Decrease();
-        }
-        else
-        {
-            // Draw -> show draw sprite for 2s, then revert to neutral
-            if (chosen.draw != null)
-                StartCoroutine(ShowDrawTemporarily(chosen.draw, 1f));
-            else if (enemyNeutral != null)
-                ShowOnly(enemyNeutral);
-
-            Debug.Log("Draw!");
+            abilityReady = true;
+            if (abilityButton != null)
+                abilityButton.interactable = true; // enable ability button
+            Debug.Log("Ability unlocked! You can now see enemy probabilities next round.");
         }
     }
+    else if (result == -1)
+    {
+        // Enemy wins -> enemy happy
+        chosen.happy.gameObject.SetActive(true);
+        Debug.Log("Enemy Wins!");
+        if (coffeeMeter != null)
+            coffeeMeter.Decrease();
+
+        // Reset win streak if player loses
+        playerWinStreak = 0;
+    }
+    else
+    {
+        // Draw -> show draw sprite for 2s, then revert to neutral
+        if (chosen.draw != null)
+            StartCoroutine(ShowDrawTemporarily(chosen.draw, 1f));
+        else if (enemyNeutral != null)
+            ShowOnly(enemyNeutral);
+
+        Debug.Log("Draw!");
+
+        // Reset win streak on draw
+        playerWinStreak = 0;
+    }
+}
+
+    RPSChoice GetAdaptiveEnemyChoice()
+    {
+        float rockWeight = 1f;
+        float paperWeight = 1f;
+        float scissorsWeight = 1f;
+
+        if (lastPlayerChoice.HasValue)
+        {
+            switch (lastPlayerChoice.Value)
+            {
+                case RPSChoice.Rock: paperWeight = 2f; break;
+                case RPSChoice.Paper: scissorsWeight = 2f; break;
+                case RPSChoice.Scissors: rockWeight = 2f; break;
+            }
+        }
+
+        // After enemy makes choice, reset ability
+        if (abilityActive)
+        {
+            abilityActive = false;
+            if (probabilityText != null)
+                probabilityText.text = ""; // hide probabilities after next move
+        }
+
+        float total = rockWeight + paperWeight + scissorsWeight;
+        float rand = Random.Range(0f, total);
+
+        if (rand < rockWeight) return RPSChoice.Rock;
+        else if (rand < rockWeight + paperWeight) return RPSChoice.Paper;
+        else return RPSChoice.Scissors;
+    }
+
 
     int DetermineWinner(RPSChoice player, RPSChoice enemy)
     {
@@ -157,4 +218,49 @@ public class RPSGameController : MonoBehaviour
         if (enemyNeutral != null)
             enemyNeutral.gameObject.SetActive(true);
     }
+
+    public void ActivateAbility()
+    {
+        if (!abilityReady) return;
+
+        abilityActive = true;    // The ability will apply this round
+        abilityReady = false;    // Disable until next 3-win streak
+
+        if (abilityButton != null)
+            abilityButton.interactable = false;
+
+        ShowEnemyProbabilities();
+    }
+
+
+    void ShowEnemyProbabilities()
+    {
+        if (!abilityActive) return;
+
+        float rockWeight = 1f;
+        float paperWeight = 1f;
+        float scissorsWeight = 1f;
+
+        // Bias toward last player choice
+        if (lastPlayerChoice.HasValue)
+        {
+            switch (lastPlayerChoice.Value)
+            {
+                case RPSChoice.Rock: paperWeight = 2f; break;
+                case RPSChoice.Paper: scissorsWeight = 2f; break;
+                case RPSChoice.Scissors: rockWeight = 2f; break;
+            }
+        }
+
+        float total = rockWeight + paperWeight + scissorsWeight;
+        float rockPercent = rockWeight / total * 100f;
+        float paperPercent = paperWeight / total * 100f;
+        float scissorsPercent = scissorsWeight / total * 100f;
+
+        if (probabilityText != null)
+            probabilityText.text = $"Rock: {rockPercent:F0}%\tPaper: {paperPercent:F0}%\tScissors: {scissorsPercent:F0}%";
+
+        Debug.Log($"Enemy Probabilities:\nRock: {rockPercent}%\nPaper: {paperPercent}%\nScissors: {scissorsPercent}%");
+    }
+
 }
