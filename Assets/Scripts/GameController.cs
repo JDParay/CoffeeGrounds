@@ -31,6 +31,7 @@ public class RPSGameController : MonoBehaviour
     [Header("Player Ability")]
 public UnityEngine.UI.Button abilityButton;
     private int playerWinStreak = 0;
+    private int playerDrawStreak = 0;
     private bool abilityReady = false;
     private bool abilityActive = false;
     public TMPro.TextMeshProUGUI probabilityText;
@@ -85,14 +86,15 @@ public UnityEngine.UI.Button abilityButton;
             coffeeMeter.Increase();
 
         // --- Win streak logic ---
-        playerWinStreak++;
-        if (playerWinStreak >= 3)
-        {
-            abilityReady = true;
-            if (abilityButton != null)
-                abilityButton.interactable = true; // enable ability button
-            Debug.Log("Ability unlocked! You can now see enemy probabilities next round.");
-        }
+        // playerWinStreak++;
+        // if (playerWinStreak >= 5)
+        // {
+        //     abilityReady = true;
+        //     if (abilityButton != null)
+        //         abilityButton.interactable = true;
+        //     Debug.Log("Ability unlocked! You can now see enemy probabilities next round.");
+        // }
+        playerDrawStreak = 0;
     }
     else if (result == -1)
     {
@@ -104,18 +106,30 @@ public UnityEngine.UI.Button abilityButton;
 
         // Reset win streak if player loses
         playerWinStreak = 0;
+        playerDrawStreak = 0;
     }
     else
     {
-        // Draw -> show draw sprite for 2s, then revert to neutral
-        if (chosen.draw != null)
-            StartCoroutine(ShowDrawTemporarily(chosen.draw, 1f));
-        else if (enemyNeutral != null)
-            ShowOnly(enemyNeutral);
+        // DRAW RESULT ------------------------
+        StartCoroutine(ShowDrawTemporarily(chosen.draw, 1f));
+
+        // Increase draw streak
+        playerDrawStreak++;
+
+        // Check for ability unlock
+        if (playerDrawStreak >= 3 && !abilityReady)
+        {
+            abilityReady = true;
+
+            if (abilityButton != null)
+                abilityButton.interactable = true;
+
+            Debug.Log("Ability Unlocked! (3 Draws in a row)");
+        }
 
         Debug.Log("Draw!");
 
-        // Reset win streak on draw
+        // Reset win streak
         playerWinStreak = 0;
     }
 }
