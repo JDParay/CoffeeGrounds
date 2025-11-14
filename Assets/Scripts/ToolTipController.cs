@@ -6,7 +6,9 @@ public class TooltipController : MonoBehaviour
     public static TooltipController Instance;
 
     public RectTransform tooltipTransform;
-    public TextMeshProUGUI tooltipText;
+    public TextMeshProUGUI titleText;
+    public TextMeshProUGUI conditionText;
+    public TextMeshProUGUI descriptionText;
     public Canvas canvas;
 
     // Tooltip will appear top-right from cursor
@@ -36,11 +38,14 @@ public class TooltipController : MonoBehaviour
         tooltipTransform.anchoredPosition = localPos + offset;
     }
 
-    public void ShowTooltip(string text)
-    {
-        tooltipText.text = text;
-        tooltipTransform.gameObject.SetActive(true);
-    }
+    public void ShowTooltip(string title, string condition, string description)
+{
+    titleText.text = title;
+    conditionText.text = condition;
+    descriptionText.text = description;
+    tooltipTransform.gameObject.SetActive(true);
+}  
+
 
     public void HideTooltip()
     {

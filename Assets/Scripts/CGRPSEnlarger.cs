@@ -4,18 +4,32 @@ using TMPro;
 
 public class CGRPSEnlarger : MonoBehaviour
 {
-    public float hoverLift = 0.2f;      // how high it moves on hover
-    public float moveSpeed = 5f;        // how smooth it moves
-    public string buttonName = "Rock";  // custom name (e.g., Rock, Paper, Scissors)
-    public Animator labelAnimator; 
+    public float hoverLift = 0.2f;
+    public float moveSpeed = 5f;
+    public string buttonName = "Rock";
+
+    public Animator labelAnimator;            // word animation
+    public Animator buttonAnimator;           // PNG animation (OPTIONAL)
+
     public event Action OnClicked;
+
     private Vector3 originalPosition;
     private bool isHovered = false;
 
     void Start()
     {
         originalPosition = transform.position;
-        labelAnimator = GetComponentInChildren<Animator>();
+
+        // Auto-find label animator
+        if (labelAnimator == null)
+            labelAnimator = GetComponentInChildren<Animator>();
+
+        if (buttonAnimator == null)
+        {
+            Animator[] anims = GetComponentsInChildren<Animator>();
+            if (anims.Length > 1)
+                buttonAnimator = anims[1];
+        }
     }
 
     void OnMouseEnter()
@@ -23,13 +37,22 @@ public class CGRPSEnlarger : MonoBehaviour
         isHovered = true;
         Debug.Log($"Hovered: {buttonName}");
 
-        labelAnimator.Play("word_show");
+        if (labelAnimator != null)
+            labelAnimator.SetTrigger("Show");
+
+        if (buttonAnimator != null)
+            buttonAnimator.SetTrigger("Hover");
     }
 
     void OnMouseExit()
     {
         isHovered = false;
-        labelAnimator.Play("Idle");
+
+        if (labelAnimator != null)
+            labelAnimator.Play("Idle");
+
+        if (buttonAnimator != null)
+            buttonAnimator.SetTrigger("Idle");
     }
 
     void OnMouseDown()
