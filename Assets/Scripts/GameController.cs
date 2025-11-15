@@ -39,6 +39,10 @@ public CGRPSEnlarger EliminationButton;
     private bool eliminationAbilityReady = false; 
     private bool eliminationAbilityActive = false;
     public TMPro.TextMeshProUGUI probabilityText;
+    private RPSChoice nextEnemyChoice;
+
+    [Header("Blocker PNGs (separate inputs)")]
+    public GameObject[] blockerPNGs;
 
     private RPSChoice? lastPlayerChoice = null;
 
@@ -93,24 +97,26 @@ public CGRPSEnlarger EliminationButton;
     void PlayerChose(RPSChoice playerChoice)
 {
     if (abilityActive && probabilityText != null)
-    {
-        probabilityText.text = "";
-        abilityActive = false;
-        Animator anim = ProbabilityButton.GetComponent<Animator>();
-        if (anim != null)
-            anim.speed = 1f;
-        ProbabilityButton.boxCollider.enabled = true;
-    }
+{
+    probabilityText.text = "";
+    abilityActive = false;
+    Animator anim = ProbabilityButton.GetComponent<Animator>();
+    if (anim != null)
+        anim.speed = 1f;
+    ProbabilityButton.boxCollider.enabled = true;
+}
 
     if (eliminationAbilityActive)
     {
-        ActivateEliminationAbility();
-
-        if (EliminationButton != null)
-            EliminationButton.boxCollider.enabled = true; // re-enable button
+    if (EliminationButton != null)
+        EliminationButton.boxCollider.enabled = false;
     }
 
-    RPSChoice enemyChoice = GetAdaptiveEnemyChoice();
+    if (!eliminationAbilityActive)
+    nextEnemyChoice = GetAdaptiveEnemyChoice();
+
+    RPSChoice enemyChoice = nextEnemyChoice;
+
     lastPlayerChoice = playerChoice;
     Debug.Log($"You: {playerChoice} | Enemy: {enemyChoice}");
 
@@ -143,16 +149,16 @@ public CGRPSEnlarger EliminationButton;
         chosen.happy.gameObject.SetActive(true);
         if (coffeeMeter != null)
             coffeeMeter.Decrease();
+
         playerFailStreak++;
 
     if (playerFailStreak >= 4 && !eliminationAbilityReady) 
     {
         eliminationAbilityReady = true;
+
         if (EliminationButton != null)
             EliminationButton.boxCollider.enabled = true;
         Debug.Log("Elimination Ability Ready (4 fails).");
-
-        Invoke(nameof(ResetChoices), 0.2f);
     }
         playerWinStreak = 0;
         playerDrawStreak = 0;
@@ -175,6 +181,14 @@ public CGRPSEnlarger EliminationButton;
 
         playerWinStreak = 0;
         playerFailStreak = 0;
+    }
+    Invoke(nameof(ResetChoices), 0.2f);
+
+    if (eliminationAbilityActive)
+    {
+    eliminationAbilityActive = false;
+    if (EliminationButton != null)
+        EliminationButton.boxCollider.enabled = true;
     }
 }
 
@@ -229,14 +243,23 @@ public CGRPSEnlarger EliminationButton;
     {
         CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
 
-        foreach (var c in all)
+        for (int i = 0; i < all.Length; i++)
         {
+            var c = all[i];
             c.boxCollider.enabled = true;
 
             if (c.blockerPNG != null)
                 c.blockerPNG.SetActive(false);
+
+            if (blockerPNGs != null && blockerPNGs.Length == 3 && blockerPNGs[i] != null)
+                blockerPNGs[i].SetActive(false);
         }
+
+        // clear probability text if needed
+        if (probabilityText != null)
+            probabilityText.text = "";
     }
+
 
     public static RPSChoice GetCounterChoice(RPSChoice enemy)
     {
@@ -339,30 +362,42 @@ public CGRPSEnlarger EliminationButton;
     ShowEnemyProbabilities();
     }
 
-    public void ActivateEliminationAbility() 
+    public void ActivateEliminationAbility()
+{
+    Debug.Log("ActivateEliminationAbility called, eliminationAbilityReady=" + eliminationAbilityReady);
+
+    if (!eliminationAbilityReady) return;
+
+    eliminationAbilityReady = false;
+    eliminationAbilityActive = true;
+
+    nextEnemyChoice = GetAdaptiveEnemyChoice();
+
+    if (probabilityText != null)
+        probabilityText.text = $"{nextEnemyChoice} : 100%";
+
+    RPSChoice correctPlayerChoice = GetCounterChoice(nextEnemyChoice);
+
+    CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
+    for (int i = 0; i < all.Length; i++)
     {
-        Debug.Log("ActivateEliminationAbility called, abilityReady=" + abilityReady);
+        var c = all[i];
+        bool isCorrect = (c.choiceType == correctPlayerChoice);
 
-        if (!eliminationAbilityActive) return;
-        RPSChoice enemyChoice = GetAdaptiveEnemyChoice();
+        c.boxCollider.enabled = isCorrect;
 
-        RPSChoice correctPlayerChoice = GetCounterChoice(enemyChoice);
-
-        CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
-
-        foreach (var c in all)
+        if (blockerPNGs != null && blockerPNGs.Length == 3)
         {
-            bool isCorrect = (c.choiceType == correctPlayerChoice);
-
-            c.boxCollider.enabled = isCorrect;
-
-            // Show blocker PNG on wrong choices
+            if (blockerPNGs[i] != null)
+                blockerPNGs[i].SetActive(!isCorrect);
+        }
+        else
+        {
             if (c.blockerPNG != null)
                 c.blockerPNG.SetActive(!isCorrect);
         }
-
-        eliminationAbilityActive = false;
     }
+}
 
     void ShowEnemyProbabilities()
     {
