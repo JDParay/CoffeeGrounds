@@ -8,13 +8,21 @@ public class CGRPSEnlarger : MonoBehaviour
     public float moveSpeed = 5f;
     public string buttonName = "Rock";
 
-    public Animator labelAnimator;            // word animation
-    public Animator buttonAnimator;           // PNG animation (OPTIONAL)
+    public Animator labelAnimator;   
+    public Animator buttonAnimator;  
 
     public event Action OnClicked;
+    public UnityEngine.UI.Button uiButton;
+
+    // NEW ------------------------------
+    public RPSGameController.RPSChoice choiceType;
+    public BoxCollider2D boxCollider;
+    public GameObject blockerPNG;
+    // ----------------------------------
 
     private Vector3 originalPosition;
     private bool isHovered = false;
+    public bool interactable = true;
 
     void Start()
     {
@@ -30,12 +38,22 @@ public class CGRPSEnlarger : MonoBehaviour
             if (anims.Length > 1)
                 buttonAnimator = anims[1];
         }
+
+        if (boxCollider == null)
+            boxCollider = GetComponent<BoxCollider2D>();
+
+        if (blockerPNG != null)
+            blockerPNG.SetActive(false);
+
+        if (uiButton != null)
+            uiButton.onClick.AddListener(() => OnClicked?.Invoke());
     }
 
     void OnMouseEnter()
     {
+        if (!boxCollider.enabled) return; // prevents hover on disabled
+
         isHovered = true;
-        Debug.Log($"Hovered: {buttonName}");
 
         if (labelAnimator != null)
             labelAnimator.SetTrigger("Show");
@@ -46,6 +64,8 @@ public class CGRPSEnlarger : MonoBehaviour
 
     void OnMouseExit()
     {
+        if (!boxCollider.enabled) return;
+
         isHovered = false;
 
         if (labelAnimator != null)
@@ -57,6 +77,9 @@ public class CGRPSEnlarger : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (!boxCollider.enabled) return;
+        if (!interactable) return;
+
         Debug.Log("Clicked: " + buttonName);
         OnClicked?.Invoke();
     }
@@ -68,5 +91,13 @@ public class CGRPSEnlarger : MonoBehaviour
             : originalPosition;
 
         transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpeed);
+    }
+
+    public void SetInteractable(bool state)
+    {
+        interactable = state;
+
+        if (blockerPNG != null)
+            blockerPNG.SetActive(!state); // show overlay if not interactable
     }
 }

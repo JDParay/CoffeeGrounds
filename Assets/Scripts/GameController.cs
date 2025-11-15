@@ -29,11 +29,15 @@ public class RPSGameController : MonoBehaviour
     public CoffeeMeter coffeeMeter;
 
     [Header("Player Ability")]
-public UnityEngine.UI.Button abilityButton;
+public CGRPSEnlarger ProbabilityButton;
+public CGRPSEnlarger EliminationButton;
     private int playerWinStreak = 0;
-    private int playerDrawStreak = 0;
-    private bool abilityReady = false;
-    private bool abilityActive = false;
+    private int playerDrawStreak = 0; //testing
+    private int playerFailStreak = 3;
+    private bool abilityReady = false; //testing
+    private bool abilityActive = false; //testing
+    private bool eliminationAbilityReady = false; 
+    private bool eliminationAbilityActive = false;
     public TMPro.TextMeshProUGUI probabilityText;
 
     private RPSChoice? lastPlayerChoice = null;
@@ -46,7 +50,28 @@ public UnityEngine.UI.Button abilityButton;
         paperSprite.OnClicked += () => PlayerChose(RPSChoice.Paper);
         scissorsSprite.OnClicked += () => PlayerChose(RPSChoice.Scissors);
 
-        // Initialize visuals
+        if (ProbabilityButton != null)
+    {
+        ProbabilityButton.OnClicked += () =>
+        {
+            Debug.Log("Probability skill clicked!");
+            ActivatePredictionAbility();
+        };
+
+        ProbabilityButton.boxCollider.enabled = true;
+    }
+
+    if (EliminationButton != null)
+    {
+        EliminationButton.OnClicked += () =>
+        {
+            Debug.Log("Elimination skill clicked!");
+            ActivateEliminationAbility();
+        };
+
+        EliminationButton.boxCollider.enabled = true;
+    }
+
         ShowOnly(enemyNeutral);
 
         // Optional: VN-style pre-game dialogue
@@ -67,7 +92,24 @@ public UnityEngine.UI.Button abilityButton;
 
     void PlayerChose(RPSChoice playerChoice)
 {
-    // Enemy chooses with adaptive AI
+    if (abilityActive && probabilityText != null)
+    {
+        probabilityText.text = "";
+        abilityActive = false;
+        Animator anim = ProbabilityButton.GetComponent<Animator>();
+        if (anim != null)
+            anim.speed = 1f;
+        ProbabilityButton.boxCollider.enabled = true;
+    }
+
+    if (eliminationAbilityActive)
+    {
+        ActivateEliminationAbility();
+
+        if (EliminationButton != null)
+            EliminationButton.boxCollider.enabled = true; // re-enable button
+    }
+
     RPSChoice enemyChoice = GetAdaptiveEnemyChoice();
     lastPlayerChoice = playerChoice;
     Debug.Log($"You: {playerChoice} | Enemy: {enemyChoice}");
@@ -81,7 +123,6 @@ public UnityEngine.UI.Button abilityButton;
     {
         // Player wins -> enemy mad
         chosen.mad.gameObject.SetActive(true);
-        Debug.Log("You Win!");
         if (coffeeMeter != null)
             coffeeMeter.Increase();
 
@@ -95,42 +136,45 @@ public UnityEngine.UI.Button abilityButton;
         //     Debug.Log("Ability unlocked! You can now see enemy probabilities next round.");
         // }
         playerDrawStreak = 0;
+        playerFailStreak = 0;
     }
     else if (result == -1)
     {
-        // Enemy wins -> enemy happy
         chosen.happy.gameObject.SetActive(true);
-        Debug.Log("Enemy Wins!");
         if (coffeeMeter != null)
             coffeeMeter.Decrease();
+        playerFailStreak++;
 
-        // Reset win streak if player loses
+    if (playerFailStreak >= 4 && !eliminationAbilityReady) 
+    {
+        eliminationAbilityReady = true;
+        if (EliminationButton != null)
+            EliminationButton.boxCollider.enabled = true;
+        Debug.Log("Elimination Ability Ready (4 fails).");
+
+        Invoke(nameof(ResetChoices), 0.2f);
+    }
         playerWinStreak = 0;
         playerDrawStreak = 0;
-    }
+    }  
     else
-    {
-        // DRAW RESULT ------------------------
+    {   //DRAW LOGIC!!!! 
         StartCoroutine(ShowDrawTemporarily(chosen.draw, 1f));
 
-        // Increase draw streak
         playerDrawStreak++;
 
-        // Check for ability unlock
         if (playerDrawStreak >= 3 && !abilityReady)
         {
             abilityReady = true;
 
-            if (abilityButton != null)
-                abilityButton.interactable = true;
+            if (ProbabilityButton != null)
+                ProbabilityButton.boxCollider.enabled = true;
 
             Debug.Log("Ability Unlocked! (3 Draws in a row)");
         }
 
-        Debug.Log("Draw!");
-
-        // Reset win streak
         playerWinStreak = 0;
+        playerFailStreak = 0;
     }
 }
 
@@ -150,13 +194,11 @@ public UnityEngine.UI.Button abilityButton;
             }
         }
 
-        // After enemy makes choice, reset ability
-        if (abilityActive)
-        {
-            abilityActive = false;
-            if (probabilityText != null)
-                probabilityText.text = ""; // hide probabilities after next move
-        }
+        if (abilityActive) 
+        { 
+            abilityActive = false; 
+            if (probabilityText != null) 
+            probabilityText.text = "";}
 
         float total = rockWeight + paperWeight + scissorsWeight;
         float rand = Random.Range(0f, total);
@@ -166,6 +208,46 @@ public UnityEngine.UI.Button abilityButton;
         else return RPSChoice.Scissors;
     }
 
+    void DisableWrongChoices(RPSChoice enemyChoice)
+    {
+        RPSChoice correct = GetCounterChoice(enemyChoice);
+
+        CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
+
+        foreach (var c in all)
+        {
+            bool isCorrect = (c.choiceType == correct);
+
+            c.boxCollider.enabled = isCorrect;
+
+            if (c.blockerPNG != null)
+                c.blockerPNG.SetActive(!isCorrect);
+        }
+    }
+
+    void ResetChoices()
+    {
+        CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
+
+        foreach (var c in all)
+        {
+            c.boxCollider.enabled = true;
+
+            if (c.blockerPNG != null)
+                c.blockerPNG.SetActive(false);
+        }
+    }
+
+    public static RPSChoice GetCounterChoice(RPSChoice enemy)
+    {
+        return enemy switch
+        {
+            RPSChoice.Rock => RPSChoice.Paper,
+            RPSChoice.Paper => RPSChoice.Scissors,
+            RPSChoice.Scissors => RPSChoice.Rock,
+            _ => enemy
+        };
+    }
 
     int DetermineWinner(RPSChoice player, RPSChoice enemy)
     {
@@ -233,19 +315,54 @@ public UnityEngine.UI.Button abilityButton;
             enemyNeutral.gameObject.SetActive(true);
     }
 
-    public void ActivateAbility()
+    public void ActivatePredictionAbility()
     {
+        Debug.Log("ActivatePredictionAbility called, abilityReady=" + abilityReady);
+
         if (!abilityReady) return;
 
-        abilityActive = true;    // The ability will apply this round
-        abilityReady = false;    // Disable until next 3-win streak
+        abilityActive = true;
+        abilityReady = false;
 
-        if (abilityButton != null)
-            abilityButton.interactable = false;
+        if (ProbabilityButton != null)
+        {
+            ProbabilityButton.boxCollider.enabled = true;
 
-        ShowEnemyProbabilities();
+            Animator anim = ProbabilityButton.GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.Play(0, 0, 0f); // go to first frame
+            anim.speed = 0f;     // pause animation
+        }
+        }    
+
+    ShowEnemyProbabilities();
     }
 
+    public void ActivateEliminationAbility() 
+    {
+        Debug.Log("ActivateEliminationAbility called, abilityReady=" + abilityReady);
+
+        if (!eliminationAbilityActive) return;
+        RPSChoice enemyChoice = GetAdaptiveEnemyChoice();
+
+        RPSChoice correctPlayerChoice = GetCounterChoice(enemyChoice);
+
+        CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
+
+        foreach (var c in all)
+        {
+            bool isCorrect = (c.choiceType == correctPlayerChoice);
+
+            c.boxCollider.enabled = isCorrect;
+
+            // Show blocker PNG on wrong choices
+            if (c.blockerPNG != null)
+                c.blockerPNG.SetActive(!isCorrect);
+        }
+
+        eliminationAbilityActive = false;
+    }
 
     void ShowEnemyProbabilities()
     {
@@ -255,7 +372,6 @@ public UnityEngine.UI.Button abilityButton;
         float paperWeight = 1f;
         float scissorsWeight = 1f;
 
-        // Bias toward last player choice
         if (lastPlayerChoice.HasValue)
         {
             switch (lastPlayerChoice.Value)
@@ -275,6 +391,14 @@ public UnityEngine.UI.Button abilityButton;
             probabilityText.text = $"Rock: {rockPercent:F0}%\tPaper: {paperPercent:F0}%\tScissors: {scissorsPercent:F0}%";
 
         Debug.Log($"Enemy Probabilities:\nRock: {rockPercent}%\nPaper: {paperPercent}%\nScissors: {scissorsPercent}%");
+    }
+
+    void ShowForcedChoices()
+    {
+        RPSChoice forcedEnemyChoice = GetAdaptiveEnemyChoice();
+        
+        DisableWrongChoices(forcedEnemyChoice);
+        ShowEnemyProbabilities();
     }
 
 }
