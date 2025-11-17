@@ -31,13 +31,17 @@ public class RPSGameController : MonoBehaviour
     [Header("Player Ability")]
 public CGRPSEnlarger ProbabilityButton;
 public CGRPSEnlarger EliminationButton;
-    private int playerWinStreak = 0;
-    private int playerDrawStreak = 0; //testing
+public CGRPSEnlarger BlessingButton;
+    private int playerWinStreak = 4;
+    private int playerDrawStreak = 2; //testing
     private int playerFailStreak = 3;
-    private bool abilityReady = false; //testing
-    private bool abilityActive = false; //testing
+    private bool abilityReady = false;
+    private bool abilityActive = false; 
     private bool eliminationAbilityReady = false; 
     private bool eliminationAbilityActive = false;
+    private bool winStreakReady = false;
+    private bool winStreakActive = false;
+
     public TMPro.TextMeshProUGUI probabilityText;
     private RPSChoice nextEnemyChoice;
 
@@ -76,6 +80,17 @@ public CGRPSEnlarger EliminationButton;
         EliminationButton.boxCollider.enabled = true;
     }
 
+    if (BlessingButton != null)
+    {
+        BlessingButton.OnClicked += () =>
+        {
+            Debug.Log("Blessing skill clicked!");
+            ActivateBlessingAbility();
+        };
+
+        BlessingButton.boxCollider.enabled = true;
+    }
+
         ShowOnly(enemyNeutral);
 
         // Optional: VN-style pre-game dialogue
@@ -109,7 +124,10 @@ public CGRPSEnlarger EliminationButton;
     if (eliminationAbilityActive)
     {
     if (EliminationButton != null)
-        EliminationButton.boxCollider.enabled = false;
+        EliminationButton.boxCollider.enabled = true;
+        Animator anim = EliminationButton.GetComponent<Animator>();
+        if (anim != null)
+        anim.speed = 1f;  
     }
 
     if (!eliminationAbilityActive)
@@ -117,6 +135,11 @@ public CGRPSEnlarger EliminationButton;
 
     RPSChoice enemyChoice = nextEnemyChoice;
 
+    if (winStreakActive)
+    {
+        if (BlessingButton != null)
+        BlessingButton.boxCollider.enabled = true;
+    }
     lastPlayerChoice = playerChoice;
     Debug.Log($"You: {playerChoice} | Enemy: {enemyChoice}");
 
@@ -125,25 +148,34 @@ public CGRPSEnlarger EliminationButton;
 
     EnemyReaction chosen = GetEnemyReaction(enemyChoice);
 
+    //WINSTREAK LOGIC
     if (result == 1)
     {
-        // Player wins -> enemy mad
-        chosen.mad.gameObject.SetActive(true);
+    chosen.mad.gameObject.SetActive(true);
+
         if (coffeeMeter != null)
             coffeeMeter.Increase();
 
-        // --- Win streak logic ---
-        // playerWinStreak++;
-        // if (playerWinStreak >= 5)
-        // {
-        //     abilityReady = true;
-        //     if (abilityButton != null)
-        //         abilityButton.interactable = true;
-        //     Debug.Log("Ability unlocked! You can now see enemy probabilities next round.");
-        // }
+        playerWinStreak++;
+
+        if (playerWinStreak >= 5 && !winStreakReady)
+        {
+            winStreakReady = true;
+
+            if (BlessingButton != null)
+            {
+                BlessingButton.boxCollider.enabled = true;
+                BlessingButton.NotifySkillUnlocked();
+            }
+
+            Debug.Log("Win Streak Reward Ready! (5 wins)");
+        }
+        
         playerDrawStreak = 0;
         playerFailStreak = 0;
+
     }
+    //ELIMINATION LOGIC
     else if (result == -1)
     {
         chosen.happy.gameObject.SetActive(true);
@@ -157,7 +189,8 @@ public CGRPSEnlarger EliminationButton;
         eliminationAbilityReady = true;
 
         if (EliminationButton != null)
-            EliminationButton.boxCollider.enabled = true;
+            {EliminationButton.boxCollider.enabled = true;
+            EliminationButton.NotifySkillUnlocked();}
         Debug.Log("Elimination Ability Ready (4 fails).");
     }
         playerWinStreak = 0;
@@ -174,7 +207,8 @@ public CGRPSEnlarger EliminationButton;
             abilityReady = true;
 
             if (ProbabilityButton != null)
-                ProbabilityButton.boxCollider.enabled = true;
+                { ProbabilityButton.boxCollider.enabled = true;
+                ProbabilityButton.NotifySkillUnlocked(); }
 
             Debug.Log("Ability Unlocked! (3 Draws in a row)");
         }
@@ -354,8 +388,8 @@ public CGRPSEnlarger EliminationButton;
             Animator anim = ProbabilityButton.GetComponent<Animator>();
         if (anim != null)
         {
-            anim.Play(0, 0, 0f); // go to first frame
-            anim.speed = 0f;     // pause animation
+            anim.Play(0, 0, 0f);
+            anim.speed = 0f;
         }
         }    
 
@@ -397,7 +431,39 @@ public CGRPSEnlarger EliminationButton;
                 c.blockerPNG.SetActive(!isCorrect);
         }
     }
+
+    Animator anim = EliminationButton.GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.Play(0, 0, 0f);
+            anim.speed = 0f;
+        }
 }
+
+    public void ActivateBlessingAbility()
+    {
+        if (!winStreakReady) return;
+
+        winStreakReady = false;
+        winStreakActive = true;
+
+        if (coffeeMeter != null)
+            coffeeMeter.Increase();
+
+        if (BlessingButton != null)
+            BlessingButton.boxCollider.enabled = true;
+
+        Debug.Log("Win Streak Power-Up Activated! Coffee increased!");
+
+        playerWinStreak = 0;
+
+        Animator anim = BlessingButton.GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.Play(0, 0, 0f);
+        }
+    }
+
 
     void ShowEnemyProbabilities()
     {

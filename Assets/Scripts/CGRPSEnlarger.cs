@@ -8,11 +8,10 @@ public class CGRPSEnlarger : MonoBehaviour
     public float moveSpeed = 5f;
     public string buttonName = "Rock";
 
-    public Animator labelAnimator;   
-    public Animator buttonAnimator;  
+    public Animator labelAnimator;
+    public Animator buttonAnimator;
 
     public event Action OnClicked;
-    public UnityEngine.UI.Button uiButton;
 
     // NEW ------------------------------
     public RPSGameController.RPSChoice choiceType;
@@ -22,13 +21,16 @@ public class CGRPSEnlarger : MonoBehaviour
 
     private Vector3 originalPosition;
     private bool isHovered = false;
+
+    private bool skillUnlocked = false; 
+    private bool skillUsed = false;
+
     public bool interactable = true;
 
     void Start()
     {
         originalPosition = transform.position;
 
-        // Auto-find label animator
         if (labelAnimator == null)
             labelAnimator = GetComponentInChildren<Animator>();
 
@@ -44,22 +46,28 @@ public class CGRPSEnlarger : MonoBehaviour
 
         if (blockerPNG != null)
             blockerPNG.SetActive(false);
-
-        if (uiButton != null)
-            uiButton.onClick.AddListener(() => OnClicked?.Invoke());
     }
+
+    // ---------------------------------------------------------
+    //                      HOVER
+    // ---------------------------------------------------------
 
     void OnMouseEnter()
     {
-        if (!boxCollider.enabled) return; // prevents hover on disabled
+        if (!boxCollider.enabled) return;
+        if (!interactable) return;
 
         isHovered = true;
 
+        // Hover anim
+        if (buttonAnimator != null)
+        {
+            buttonAnimator.SetBool("Hover", true);
+            buttonAnimator.SetBool("Notif", false); // stop notif while hovering
+        }
+
         if (labelAnimator != null)
             labelAnimator.SetTrigger("Show");
-
-        if (buttonAnimator != null)
-            buttonAnimator.SetTrigger("Hover");
     }
 
     void OnMouseExit()
@@ -68,12 +76,24 @@ public class CGRPSEnlarger : MonoBehaviour
 
         isHovered = false;
 
+        if (buttonAnimator != null)
+        {
+            buttonAnimator.SetBool("Hover", false);
+
+            // If skill not used, notif resumes
+            if (skillUnlocked && !skillUsed)
+                buttonAnimator.SetBool("Notif", true);
+            else
+                buttonAnimator.SetBool("Notif", false);
+        }
+
         if (labelAnimator != null)
             labelAnimator.Play("Idle");
-
-        if (buttonAnimator != null)
-            buttonAnimator.SetTrigger("Idle");
     }
+
+    // ---------------------------------------------------------
+    //                      CLICK
+    // ---------------------------------------------------------
 
     void OnMouseDown()
     {
@@ -81,8 +101,21 @@ public class CGRPSEnlarger : MonoBehaviour
         if (!interactable) return;
 
         Debug.Log("Clicked: " + buttonName);
+
         OnClicked?.Invoke();
+
+        skillUsed = true;
+
+        if (buttonAnimator != null)
+        {
+            buttonAnimator.SetBool("Notif", false);
+            buttonAnimator.SetTrigger("Used");    // notif → idle
+        }
     }
+
+    // ---------------------------------------------------------
+    //                      MOVEMENT
+    // ---------------------------------------------------------
 
     void Update()
     {
@@ -90,7 +123,32 @@ public class CGRPSEnlarger : MonoBehaviour
             ? originalPosition + Vector3.up * hoverLift
             : originalPosition;
 
-        transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpeed);
+        transform.position = Vector3.Lerp(transform.position, targetPos,
+            Time.deltaTime * moveSpeed);
+    }
+
+    // ---------------------------------------------------------
+    //          CALLED BY RPSGameController WHEN UNLOCKED
+    // ---------------------------------------------------------
+
+    public void NotifySkillUnlocked()
+    {
+        skillUnlocked = true;
+
+        if (buttonAnimator != null)
+            buttonAnimator.SetBool("Notif", true);  // idle → notif
+    }
+
+    public void ResetSkillState()
+    {
+        skillUnlocked = false;
+        skillUsed = false;
+
+        if (buttonAnimator != null)
+        {
+            buttonAnimator.SetBool("Notif", false);
+            buttonAnimator.SetBool("Hover", false);
+        }
     }
 
     public void SetInteractable(bool state)
@@ -98,6 +156,6 @@ public class CGRPSEnlarger : MonoBehaviour
         interactable = state;
 
         if (blockerPNG != null)
-            blockerPNG.SetActive(!state); // show overlay if not interactable
+            blockerPNG.SetActive(!state);
     }
 }

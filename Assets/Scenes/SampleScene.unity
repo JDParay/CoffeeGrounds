@@ -752,8 +752,8 @@ Transform:
   m_GameObject: {fileID: 152589818}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -966.84, y: -540.18, z: -1}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -967.52, y: -541.21, z: -1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 391869754}
@@ -790,7 +790,6 @@ MonoBehaviour:
   buttonName: Elimination
   labelAnimator: {fileID: 0}
   buttonAnimator: {fileID: 152589824}
-  uiButton: {fileID: 0}
   choiceType: 0
   boxCollider: {fileID: 0}
   blockerPNG: {fileID: 0}
@@ -1019,6 +1018,196 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &160178458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160178459}
+  - component: {fileID: 160178464}
+  - component: {fileID: 160178463}
+  - component: {fileID: 160178462}
+  - component: {fileID: 160178461}
+  - component: {fileID: 160178460}
+  m_Layer: 0
+  m_Name: BlessingSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &160178459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160178458}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -967.52, y: -538.98, z: -1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 391869754}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &160178460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160178458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98426bfc6085d17408d1ba009972b8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Cup of Blessings
+  condition: (4 Wins to Activate)
+  description: Gain an extra 10 points to add to the Coffee Meter.
+--- !u!114 &160178461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160178458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ee8bc03ea512c4cb9c1a7a3368075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverLift: 0.2
+  moveSpeed: 5
+  buttonName: Blessing
+  labelAnimator: {fileID: 0}
+  buttonAnimator: {fileID: 160178463}
+  choiceType: 0
+  boxCollider: {fileID: 0}
+  blockerPNG: {fileID: 0}
+  interactable: 1
+--- !u!61 &160178462
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160178458}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2, y: 1.2}
+    newSize: {x: 1.2, y: 1.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.2}
+  m_EdgeRadius: 0
+--- !u!95 &160178463
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160178458}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f11c5ecee5fef764e88dbda988e9d0c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &160178464
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160178458}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1177581723, guid: 243f03902c515664b8586769c28c13a7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.2, y: 1.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &186934081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,8 +1532,8 @@ Transform:
   m_GameObject: {fileID: 345169696}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -966.84, y: -543, z: -1}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -967.56, y: -543.37, z: -1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 391869754}
@@ -1499,7 +1688,6 @@ MonoBehaviour:
   buttonName: Probability
   labelAnimator: {fileID: 0}
   buttonAnimator: {fileID: 345169698}
-  uiButton: {fileID: 0}
   choiceType: 0
   boxCollider: {fileID: 0}
   blockerPNG: {fileID: 0}
@@ -1552,6 +1740,7 @@ MonoBehaviour:
   coffeeMeter: {fileID: 2074373629}
   ProbabilityButton: {fileID: 345169705}
   EliminationButton: {fileID: 152589821}
+  BlessingButton: {fileID: 160178461}
   probabilityText: {fileID: 906500119}
   blockerPNGs: []
 --- !u!4 &373645471
@@ -1601,9 +1790,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 906500121}
+  - {fileID: 160178459}
   - {fileID: 152589819}
   - {fileID: 345169697}
+  - {fileID: 906500121}
   - {fileID: 1531005663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2810,7 +3000,6 @@ MonoBehaviour:
   buttonName: Rock
   labelAnimator: {fileID: 1899068077}
   buttonAnimator: {fileID: 0}
-  uiButton: {fileID: 0}
   choiceType: 0
   boxCollider: {fileID: 961754575}
   blockerPNG: {fileID: 157671579}
@@ -3488,7 +3677,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.06, y: 2.64}
+  m_Size: {x: 10.98, y: 2.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3733,7 +3922,6 @@ MonoBehaviour:
   buttonName: Scissors
   labelAnimator: {fileID: 1594655198}
   buttonAnimator: {fileID: 0}
-  uiButton: {fileID: 0}
   choiceType: 2
   boxCollider: {fileID: 1497755977}
   blockerPNG: {fileID: 1098147363}
@@ -4189,7 +4377,6 @@ MonoBehaviour:
   buttonName: Paper
   labelAnimator: {fileID: 922982609}
   buttonAnimator: {fileID: 0}
-  uiButton: {fileID: 0}
   choiceType: 1
   boxCollider: {fileID: 1556276481}
   blockerPNG: {fileID: 1090960921}
