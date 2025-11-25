@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class BackgroundParallax : MonoBehaviour
 {
-
-    [Tooltip("The multiplier for movement. Closer layers have a higher value.")]
     public float parallaxMultiplier = 0.1f;
 
     private Camera mainCamera;
