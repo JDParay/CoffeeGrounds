@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbeb3eab6d454254f94357fa81f14586, type: 3}
+  m_Name: Story1
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: Jude
+    text: Morning starts like any other.
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+  - speaker: Jude
+    text: I wake up, make my bed, order my coffee in-app, shower, prepare for work,
+      go get my coffee, and go to work.
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+  - speaker: Jude
+    text: However...
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+  - speaker: Jude
+    text: Today was different...
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+  - speaker: Jude
+    text: The Creamy White Macchiato please for Jude?
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+  - speaker: Bartista
+    text: Oh dear, you too?
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+  - speaker: Bartista
+    text: I'm afraid our Creamy White Macchiato is not available, sir.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+  - speaker: Jude
+    text: Huh? How is that unavailable? It's not like it's premium coffee...
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+  - speaker: Barista
+    text: Ah, you see... Our coffee machine is currently... grounded.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+  - speaker: Jude
+    text: Grounded?
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+  nextSceneName: 
