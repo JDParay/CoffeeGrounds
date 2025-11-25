@@ -28,6 +28,10 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
+    public Image backgroundImage;
+    public Image characterImage;
+
+
     void Start()
     {
         if (altBox != null)
@@ -65,6 +69,18 @@ public class DialogueManager : MonoBehaviour
     void ShowLine()
     {
         var line = dialogue.lines[index];
+
+        // BACKGROUND CHANGE
+    if (line.newBackground != null)
+    {
+        backgroundImage.sprite = line.newBackground;
+    }
+
+    // CHARACTER SPRITE CHANGE
+    if (line.newCharacterSprite != null)
+    {
+        characterImage.sprite = line.newCharacterSprite;
+    }
 
         // Play voice
         if (voiceSource != null)
