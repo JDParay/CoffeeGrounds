@@ -77,7 +77,13 @@ public class DialogueManager : MonoBehaviour
 
         // CHARACTER SPRITES
         if (line.leftCharacter != null) leftCharacterImage.sprite = line.leftCharacter;
-        if (line.rightCharacter != null) rightCharacterImage.sprite = line.rightCharacter;
+        if (line.rightCharacter != null)
+            {
+                if (line.slideCharacterB && rightCharacterImage.sprite != line.rightCharacter)
+                    StartCoroutine(SlideInCharacterB(line.rightCharacter, line.slideDistance, line.slideSpeed));
+                else
+                    rightCharacterImage.sprite = line.rightCharacter;
+            }
 
         // 🔥 NEW → SPEAKER GRAY LOGIC
         if (line.speakerType == SpeakerType.CharacterA)
@@ -178,4 +184,35 @@ public class DialogueManager : MonoBehaviour
 
         backgroundImage.rectTransform.localPosition = originalPos;
     }
+
+    IEnumerator SlideInCharacterB(Sprite newSprite, float distance, float speed)
+    {
+        RectTransform rt = rightCharacterImage.rectTransform;
+        Vector3 originalPos = rt.localPosition;
+        Vector3 offscreen = originalPos + new Vector3(distance, 0, 0);
+
+        // slide OUT
+        float t = 0;
+        while (t < 1f)
+        {
+            rt.localPosition = Vector3.Lerp(originalPos, offscreen, t);
+            t += Time.deltaTime / speed;
+            yield return null;
+        }
+
+        rt.localPosition = offscreen;
+        rightCharacterImage.sprite = newSprite; // swap after exit
+
+        // slide IN
+        t = 0;
+        while (t < 1f)
+        {
+            rt.localPosition = Vector3.Lerp(offscreen, originalPos, t);
+            t += Time.deltaTime / speed;
+            yield return null;
+        }
+
+        rt.localPosition = originalPos;
+    }
+
 }
