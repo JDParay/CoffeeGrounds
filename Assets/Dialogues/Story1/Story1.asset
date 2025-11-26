@@ -121,7 +121,7 @@ MonoBehaviour:
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
-    newCharacterSprite: {fileID: 0}
+    newCharacterSprite: {fileID: 21300000, guid: 7e02f3206edafcc4e9fd12b1b936938b, type: 3}
   - speaker: Jude
     text: A man with a gray hoodie spoke out as well.
     useAltBox: 1
@@ -133,7 +133,7 @@ MonoBehaviour:
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
-    newCharacterSprite: {fileID: 0}
+    newCharacterSprite: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
   - speaker: Barista
     text: Sir Bill, if you're in a hurry, you can just find a different coffee shop...
     useAltBox: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
-    newCharacterSprite: {fileID: 0}
+    newCharacterSprite: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
   - speaker: Jude
     text: The other customers in the shop agreed on Bill's complaint, I did too.
     useAltBox: 1
