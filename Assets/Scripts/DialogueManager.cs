@@ -6,7 +6,6 @@ using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("Dialogue Data")]
     public DialogueData dialogue;
 
     [Header("UI - Main Dialogue Box")]
@@ -18,25 +17,31 @@ public class DialogueManager : MonoBehaviour
     public GameObject altBox;
     public TMP_Text altDialogueText;
 
+    [Header("Character Slots")]
+    public Image leftCharacterImage;
+    public Image rightCharacterImage;
+
+    [Header("Visuals")]
+    public Image backgroundImage;
+
     [Header("Audio")]
     public AudioSource voiceSource;
 
     [Header("Typing")]
     public float typeSpeed = 0.03f;
 
+    [Header("Speaker Highlight")]
+    public Color activeColor = Color.white;                          // speaking = normal
+    public Color fadedColor = new Color(0.55f, 0.55f, 0.55f, 1f);     // gray when NOT speaking
+
     private int index = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
-    public Image backgroundImage;
-    public Image characterImage;
-
 
     void Start()
     {
-        if (altBox != null)
-            altBox.SetActive(false);
-
+        if (altBox != null) altBox.SetActive(false);
         ShowLine();
     }
 
@@ -44,25 +49,21 @@ public class DialogueManager : MonoBehaviour
     {
         if (isTyping)
         {
-            // Skip to full text
             StopCoroutine(typingCoroutine);
             FinishLineInstantly();
             return;
         }
-
         NextLine();
     }
 
     void NextLine()
     {
         index++;
-
         if (index >= dialogue.lines.Length)
         {
             SceneManager.LoadScene(dialogue.nextSceneName);
             return;
         }
-
         ShowLine();
     }
 
@@ -70,48 +71,59 @@ public class DialogueManager : MonoBehaviour
     {
         var line = dialogue.lines[index];
 
-        // BACKGROUND CHANGE
-    if (line.newBackground != null)
-    {
-        backgroundImage.sprite = line.newBackground;
-    }
+        // BACKGROUND UPDATE
+        if (line.newBackground != null)
+            backgroundImage.sprite = line.newBackground;
 
-    // CHARACTER SPRITE CHANGE
-    if (line.newCharacterSprite != null)
-    {
-        characterImage.sprite = line.newCharacterSprite;
-    }
+        // CHARACTER SPRITES
+        if (line.leftCharacter != null) leftCharacterImage.sprite = line.leftCharacter;
+        if (line.rightCharacter != null) rightCharacterImage.sprite = line.rightCharacter;
 
-        // Play voice
+        // 🔥 NEW → SPEAKER GRAY LOGIC
+        if (line.speakerType == SpeakerType.CharacterA)
+        {
+            leftCharacterImage.color = activeColor;
+            rightCharacterImage.color = fadedColor;
+        }
+        else if (line.speakerType == SpeakerType.CharacterB)
+        {
+            leftCharacterImage.color = fadedColor;
+            rightCharacterImage.color = activeColor;
+        }
+        else // narration
+        {
+            leftCharacterImage.color = fadedColor;
+            rightCharacterImage.color = fadedColor;
+        }
+
+        // SHAKE EFFECT
+        if (line.shakeBackground)
+            StartCoroutine(ShakeBackground(line.shakeIntensity, line.shakeDuration));
+
+        // AUDIO
         if (voiceSource != null)
         {
             voiceSource.Stop();
-            if (line.voiceOver != null)
-                voiceSource.PlayOneShot(line.voiceOver);
+            if (line.voiceOver != null) voiceSource.PlayOneShot(line.voiceOver);
         }
 
+        // TEXT DISPLAY
         if (line.useAltBox)
         {
             mainBox.SetActive(false);
             altBox.SetActive(true);
-
             nameText.text = line.speaker;
 
-            if (typingCoroutine != null)
-                StopCoroutine(typingCoroutine);
-
+            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
             typingCoroutine = StartCoroutine(TypeLine_Alt(line.text));
         }
         else
         {
             altBox.SetActive(false);
             mainBox.SetActive(true);
-
             nameText.text = line.speaker;
 
-            if (typingCoroutine != null)
-                StopCoroutine(typingCoroutine);
-
+            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
             typingCoroutine = StartCoroutine(TypeLine_Main(line.text));
         }
     }
@@ -120,13 +132,11 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
         mainDialogueText.text = "";
-
         foreach (char c in text)
         {
             mainDialogueText.text += c;
             yield return new WaitForSeconds(typeSpeed);
         }
-
         isTyping = false;
     }
 
@@ -134,29 +144,38 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
         altDialogueText.text = "";
-
         foreach (char c in text)
         {
             altDialogueText.text += c;
             yield return new WaitForSeconds(typeSpeed);
         }
-
         isTyping = false;
     }
 
     void FinishLineInstantly()
     {
         var line = dialogue.lines[index];
-
-        if (line.useAltBox)
-        {
-            altDialogueText.text = line.text;
-        }
-        else
-        {
-            mainDialogueText.text = line.text;
-        }
-
+        if (line.useAltBox) altDialogueText.text = line.text;
+        else mainDialogueText.text = line.text;
         isTyping = false;
+    }
+
+    IEnumerator ShakeBackground(float intensity, float duration)
+    {
+        Vector3 originalPos = backgroundImage.rectTransform.localPosition;
+        float time = 0;
+
+        while (time < duration)
+        {
+            float x = Random.Range(-intensity, intensity);
+            float y = Random.Range(-intensity, intensity);
+
+            backgroundImage.rectTransform.localPosition = originalPos + new Vector3(x, y, 0);
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        backgroundImage.rectTransform.localPosition = originalPos;
     }
 }
