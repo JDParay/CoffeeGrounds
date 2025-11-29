@@ -12,8 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Category - Story or Gameplay.unity
     guid: ae2a92bbb8e731147a1ad8ae0412fe5f
   - enabled: 1
+    path: Assets/Scenes/Category - Standard or Tricky.unity
+    guid: 8f9e02e43f81b33469bbecf6a7d89cba
+  - enabled: 1
     path: Assets/Scenes/Story1.unity
     guid: 716a5452ed38dde46b7aa779cd448076
+  - enabled: 1
+    path: Assets/Scenes/MainGame_BillBattle.unity
+    guid: c985ed9aec0e8d24781309a82b2e62c2
+  - enabled: 1
+    path: Assets/Scenes/Story1_AltEnd.unity
+    guid: efe180b072395374e8e72681a15f63bc
+  - enabled: 1
+    path: Assets/Scenes/Story2.unity
+    guid: 822ea1aba754e7d4082585d35a72c87e
   - enabled: 1
     path: Assets/Scenes/MainGame_DamonBattle.unity
     guid: 2cda990e2423bbf4892e6590ba056729

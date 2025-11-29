@@ -19,13 +19,19 @@ public class DialogueLine
     public Sprite newBackground;     
 
     [Header("Character Sprites")]
-    public Sprite leftCharacter;      // Character A
-    public Sprite rightCharacter;     // Character B
+    public Sprite leftCharacter; 
+    public Sprite rightCharacter; 
+
+    [Header("Character A Slide Transition")]
+    public bool slideCharacterA = false; 
+    public float slideADistance = 600f;  
+    public float slideASpeed = 0.4f;     
+
 
     [Header("Character B Slide Transition")]
-    public bool slideCharacterB = false;        // enable slide
-    public float slideDistance = 600f;          // how far offscreen
-    public float slideSpeed = 0.35f;            // animation speed
+    public bool slideCharacterB = false;     
+    public float slideDistance = 600f;          
+    public float slideSpeed = 0.4f;     
 
     [Header("Effects")]
     public bool shakeBackground;

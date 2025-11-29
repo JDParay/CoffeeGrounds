@@ -2758,6 +2758,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2279808895705901282, guid: dcae56c47f956fb4eb0989f0e3f2e6e9, type: 3}
+      propertyPath: Index
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5423210894492099160, guid: dcae56c47f956fb4eb0989f0e3f2e6e9, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -2773,6 +2777,10 @@ PrefabInstance:
     - target: {fileID: 7984682509529982823, guid: dcae56c47f956fb4eb0989f0e3f2e6e9, type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984682509529982823, guid: dcae56c47f956fb4eb0989f0e3f2e6e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8310711887497239413, guid: dcae56c47f956fb4eb0989f0e3f2e6e9, type: 3}
       propertyPath: m_Pivot.x

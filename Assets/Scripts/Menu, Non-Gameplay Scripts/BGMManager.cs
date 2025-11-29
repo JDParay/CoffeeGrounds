@@ -13,7 +13,7 @@ public class BGMManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // prevents duplicates if returning to previous scene
+            Destroy(gameObject); 
         }
     }
 }

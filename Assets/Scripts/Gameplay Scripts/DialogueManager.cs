@@ -34,6 +34,15 @@ public class DialogueManager : MonoBehaviour
     public Color activeColor = Color.white;                          // speaking = normal
     public Color fadedColor = new Color(0.55f, 0.55f, 0.55f, 1f);     // gray when NOT speaking
 
+    [Header("Scene Transition Panels")]
+    public GameObject vsPanel;           // shows after final dialogue
+    public GameObject sceneTransition;   // transition before scene loads
+    public float vsDisplayDuration = 3f; // how long VS stays before switch
+    public float transitionDuration = 1.5f; // wait for animation
+    
+    [Header("Scene Transition")]
+    public EnterGameTransition transitionManager;
+
     private int index = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
@@ -42,7 +51,6 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         if (altBox != null) altBox.SetActive(false);
-        ShowLine();
     }
 
     public void OnScreenTap()
@@ -56,16 +64,23 @@ public class DialogueManager : MonoBehaviour
         NextLine();
     }
 
-    void NextLine()
+        public void ShowFirstLine()
+    {
+        index = 0;
+        ShowLine();
+    }
+
+        void NextLine()
     {
         index++;
         if (index >= dialogue.lines.Length)
         {
-            SceneManager.LoadScene(dialogue.nextSceneName);
+            StartCoroutine(EndDialogueSequence());
             return;
         }
         ShowLine();
     }
+
 
     void ShowLine()
     {
@@ -76,7 +91,16 @@ public class DialogueManager : MonoBehaviour
             backgroundImage.sprite = line.newBackground;
 
         // CHARACTER SPRITES
-        if (line.leftCharacter != null) leftCharacterImage.sprite = line.leftCharacter;
+
+        // CHARACTER A — Slide In Support
+        if (line.leftCharacter != null)
+            {
+                if (line.slideCharacterA && leftCharacterImage.sprite != line.leftCharacter)
+                    StartCoroutine(SlideInCharacterA(line.leftCharacter, line.slideADistance, line.slideASpeed));
+                else
+                    leftCharacterImage.sprite = line.leftCharacter;
+            }
+
         if (line.rightCharacter != null)
             {
                 if (line.slideCharacterB && rightCharacterImage.sprite != line.rightCharacter)
@@ -84,6 +108,7 @@ public class DialogueManager : MonoBehaviour
                 else
                     rightCharacterImage.sprite = line.rightCharacter;
             }
+
 
         // 🔥 NEW → SPEAKER GRAY LOGIC
         if (line.speakerType == SpeakerType.CharacterA)
@@ -185,6 +210,35 @@ public class DialogueManager : MonoBehaviour
         backgroundImage.rectTransform.localPosition = originalPos;
     }
 
+    IEnumerator SlideInCharacterA(Sprite newSprite, float distance, float speed)
+    {
+        RectTransform rt = leftCharacterImage.rectTransform;
+        Vector3 originalPos = rt.localPosition;
+        Vector3 offscreen = originalPos + new Vector3(-distance, 0, 0); // slide left side out
+
+        float t = 0;
+        while (t < 1f)
+        {
+            rt.localPosition = Vector3.Lerp(originalPos, offscreen, t);
+            t += Time.deltaTime / speed;
+            yield return null;
+        }
+
+        rt.localPosition = offscreen;
+        leftCharacterImage.sprite = newSprite;
+
+        t = 0;
+        while (t < 1f)
+        {
+            rt.localPosition = Vector3.Lerp(offscreen, originalPos, t);
+            t += Time.deltaTime / speed;
+            yield return null;
+        }
+
+        rt.localPosition = originalPos;
+    }
+
+
     IEnumerator SlideInCharacterB(Sprite newSprite, float distance, float speed)
     {
         RectTransform rt = rightCharacterImage.rectTransform;
@@ -213,6 +267,19 @@ public class DialogueManager : MonoBehaviour
         }
 
         rt.localPosition = originalPos;
+    }
+
+    IEnumerator EndDialogueSequence()
+    {
+        if (vsPanel != null) 
+            vsPanel.SetActive(true);
+
+        yield return new WaitForSeconds(vsDisplayDuration);
+
+        if (sceneTransition != null)
+            sceneTransition.SetActive(true);
+
+        transitionManager.PlayStart();
     }
 
 }
