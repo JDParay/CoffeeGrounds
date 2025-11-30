@@ -15,7 +15,8 @@ MonoBehaviour:
   lines:
   - speaker: Jude
     speakerType: 1
-    text: Morning started like any other.
+    text: I've been ordering at this place called Coffee Grounds cafe for a while
+      now.
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -32,8 +33,8 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Jude
     speakerType: 1
-    text: I wake up, make my bed, order my coffee through app, shower, prepare to
-      grab coffee, and return home for work.
+    text: And it's always crowded by people, everyone is obsessed with how they make
+      their coffee.
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -50,7 +51,7 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Jude
     speakerType: 1
-    text: However...
+    text: However, today was a bit chaotic than usual...
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -66,19 +67,19 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
-    text: Today was different...
+    speakerType: 0
+    text: I swarm pass the grumbling crowd, not sure why they're pissed...
     useAltBox: 1
     voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
-    slideCharacterA: 0
+    newBackground: {fileID: 21300000, guid: f15204a6b308f184f97297c3c550f4ad, type: 3}
+    leftCharacter: {fileID: 21300000, guid: 2ef201273c784cd4c8dd0cb2e9498d4f, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 9537c40159f21d242876a6ee6216aec6, type: 3}
+    slideCharacterA: 1
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 0
+    slideCharacterB: 1
     slideDistance: 600
-    slideSpeed: 0.35
+    slideSpeed: 2
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
@@ -87,12 +88,12 @@ MonoBehaviour:
     text: The Creamy White Macchiato please for Jude? I ordered through the app.
     useAltBox: 0
     voiceOver: {fileID: 0}
-    newBackground: {fileID: 21300000, guid: f15204a6b308f184f97297c3c550f4ad, type: 3}
+    newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 2ef201273c784cd4c8dd0cb2e9498d4f, type: 3}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 9537c40159f21d242876a6ee6216aec6, type: 3}
     slideCharacterA: 1
     slideADistance: 600
-    slideASpeed: 0.5
+    slideASpeed: 0.3
     slideCharacterB: 0
     slideDistance: 600
     slideSpeed: 0.35
@@ -106,7 +107,7 @@ MonoBehaviour:
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 3396216c8894d91428bf5476eb630d13, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -124,7 +125,7 @@ MonoBehaviour:
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 66a9f8a5b693a9c4aad7771c7baae8d3, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -192,7 +193,7 @@ MonoBehaviour:
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 3396216c8894d91428bf5476eb630d13, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -220,17 +221,17 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: ???
-    speakerType: 2
+    speakerType: 0
     text: What it means is that it's having a mental breakdown!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 0
+    slideCharacterB: 1
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 0
@@ -240,7 +241,7 @@ MonoBehaviour:
     speakerType: 1
     text: I turned around after hearing that cheery voice from behind.
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c689dc6d3bd89884a87bc6514dc69247, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: cd4640ba150fddf4895543a03a51f74b, type: 3}
@@ -271,7 +272,7 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
+    speakerType: 0
     text: The hell?
     useAltBox: 1
     voiceOver: {fileID: 0}
@@ -291,7 +292,7 @@ MonoBehaviour:
     speakerType: 2
     text: Yeah~~ I don't really know how to explain it further, lolz~
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 78f69c758747bfb4c9b95862ab5bc6cd, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 465a375156e77d64b95a8644cc275779, type: 3}
@@ -322,8 +323,8 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
-    text: A man with a gray hoodie spoke out as well.
+    speakerType: 0
+    text: GIve it some time? What? What do they mean...
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -356,17 +357,17 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Barista
-    speakerType: 0
+    speakerType: 2
     text: Sir Bill, if you're in a hurry, you can just find a different coffee shop...
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 66a9f8a5b693a9c4aad7771c7baae8d3, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 0
+    slideCharacterB: 1
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 0
@@ -384,14 +385,14 @@ MonoBehaviour:
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 0
+    slideCharacterB: 1
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 1
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
+    speakerType: 0
     text: The other customers in the shop agreed on Bill's complaint, I did too.
     useAltBox: 1
     voiceOver: {fileID: 0}
@@ -408,7 +409,7 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
+    speakerType: 0
     text: They started asking multiple questions at once, the most prominent being
       "When is it coming back?"
     useAltBox: 1
@@ -426,7 +427,7 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
+    speakerType: 0
     text: 'The yell became evident that we are in-need of caffine. '
     useAltBox: 1
     voiceOver: {fileID: 0}
@@ -443,30 +444,31 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
-    text: Soon, a guy from the back emerges, I think this is the manager.
+    speakerType: 0
+    text: Soon, a guy from the back emerges, I think this is the manager. Never met
+      the guy personally.
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 0
+    slideCharacterB: 1
     slideDistance: 600
-    slideSpeed: 0.35
+    slideSpeed: 1
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Manager
-    speakerType: 0
-    text: Ooookay, what is going on here? Hm?
+    speakerType: 2
+    text: Ah hm... Seems like things have transpired here...
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -477,41 +479,41 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Nicole
-    speakerType: 0
-    text: Sir, they're our regular customers, and they're begging for their coffee-
+    speakerType: 2
+    text: 'Sir, the regular costumers are scary without their coffee... '
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 9a84ad9e39e235d439b425c1c775baf7, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 0
+    slideCharacterB: 1
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Manager
-    speakerType: 0
-    text: Hold it right there, Nicole... Let me handle this.
+    speakerType: 2
+    text: Hold on tight, Nicole... Let me handle this.
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 0
+    slideCharacterB: 1
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
+    speakerType: 0
     text: The manager scoffed and adjusted his tie, walking towards the front of
       register to probably announce something.
     useAltBox: 1
@@ -529,14 +531,14 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Manager
-    speakerType: 1
-    text: My dearly beloved customers, I am so glad that you have consistently chosen
-      'Coffee Grounds' as your sacred place for peace and coffee!
+    speakerType: 2
+    text: My dearly beloved customers, first I would like to say that I am so glad
+      that you have consistently chosen 'Coffee Grounds' as your sacred place!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -547,13 +549,13 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Manager
-    speakerType: 1
+    speakerType: 2
     text: However, It is a shame that our coffee machine is not feeling well...
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -564,7 +566,7 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
+    speakerType: 0
     text: The customers were beginning to start yelling again...
     useAltBox: 1
     voiceOver: {fileID: 0}
@@ -581,13 +583,13 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Manager
-    speakerType: 1
+    speakerType: 2
     text: Hold it! Wait- Let me finish!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -598,13 +600,13 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Manager
-    speakerType: 1
+    speakerType: 2
     text: I do have good news... and bad news...
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 4b5522578c80b304faea72b343dad4cf, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -615,13 +617,13 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Manager
-    speakerType: 1
+    speakerType: 2
     text: The good news is... The coffee machine is able to make coffee again!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 76ed1b4672a1acb42ac87c81e72e06ba, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -632,8 +634,8 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
-    text: We cheered, we're getting our coffee!
+    speakerType: 0
+    text: Me and everyone else cheered, finally, thought I'd be here for a while.
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -649,13 +651,13 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Manager
-    speakerType: 1
+    speakerType: 2
     text: But the bad news is...
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -667,12 +669,12 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Manager
     speakerType: 2
-    text: It can only make (1) ONE for the meantime!
+    text: It can only make ONE for the meantime!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -680,10 +682,10 @@ MonoBehaviour:
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 1
-    shakeIntensity: 20
+    shakeIntensity: 10
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
+    speakerType: 0
     text: The crowd went sour, cheers turned to 'boos!'
     useAltBox: 1
     voiceOver: {fileID: 0}
@@ -716,14 +718,14 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Manager (Markus)
-    speakerType: 0
+  - speaker: Manager
+    speakerType: 2
     text: I'm just doing my job, Bill... Our little coffee machine is still emotional.
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -733,10 +735,28 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: ???
+  - speaker: Bill
     speakerType: 2
-    text: Uh well, since it can make one coffee... which of us are you giving it
-      too...? :3
+    text: This is why you don't make your coffee machines real, people! they're not
+      pinocchio!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.35
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Cherri
+    speakerType: 2
+    text: Wait, wait- if it can only dispense one order, whose order will it be?
+      :3
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -751,14 +771,14 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Manager (Markus)
+  - speaker: Manager
     speakerType: 2
-    text: That is a good question, Cherri... I.. I haven't thought that far yet...
+    text: Huh, I haven't thought of that far.
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -768,14 +788,32 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Cherri
+  - speaker: Manager
     speakerType: 2
-    text: Well how about for the person who has came daily here? heh~
+    text: Honestly, I was thinking of just pulling sticks... I mean we could try
+      that, yeah?
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 465a375156e77d64b95a8644cc275779, type: 3}
+    rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Cherri
+    speakerType: 2
+    text: Sounds boooring~ How about you just eeny meeny miny moe!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 4aa02e240cf0fcb498420e1795127225, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: cd4640ba150fddf4895543a03a51f74b, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -787,47 +825,12 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Bill
     speakerType: 2
-    text: Well then that would be me. I have not lost a streak.
+    text: Both ideas suck! I don't have time for this!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: d64ce3c989db9b443adb62ae52e87b29, type: 3}
-    slideCharacterA: 0
-    slideADistance: 600
-    slideASpeed: 0.35
-    slideCharacterB: 0
-    slideDistance: 600
-    slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
-    shakeDuration: 0.25
-  - speaker: Cherri
-    speakerType: 2
-    text: 'As if! '
-    useAltBox: 0
-    voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 898bd6bf236746b419620b6ff5a63b6f, type: 3}
-    slideCharacterA: 0
-    slideADistance: 600
-    slideASpeed: 0.35
-    slideCharacterB: 0
-    slideDistance: 600
-    slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
-    shakeDuration: 0.25
-  - speaker: Jude
-    speakerType: 1
-    text: For someone who has been ordering here for a while, I've never encountered
-      these bunch.
-    useAltBox: 1
-    voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -837,26 +840,10 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Jude
-    speakerType: 1
-    text: Then again, I just pick up my order once I reach here.
-    useAltBox: 1
-    voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
-    slideCharacterA: 0
-    slideADistance: 600
-    slideASpeed: 0.35
-    slideCharacterB: 0
-    slideDistance: 600
-    slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
-    shakeDuration: 0.25
   - speaker: Bill
     speakerType: 2
-    text: Okay, I think I missed one day but I've got a better suggestion than attendance!
+    text: I've got a better idea, just give it to me because I'm your most loyal
+      costumer!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -865,58 +852,7 @@ MonoBehaviour:
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 1
-    slideDistance: 600
-    slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
-    shakeDuration: 0.25
-  - speaker: Manager (Markus)
-    speakerType: 2
-    text: Y-yes, Bill?
-    useAltBox: 0
-    voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
-    slideCharacterA: 0
-    slideADistance: 600
-    slideASpeed: 0.35
-    slideCharacterB: 1
-    slideDistance: 600
-    slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
-    shakeDuration: 0.25
-  - speaker: Bill
-    speakerType: 2
-    text: How about who has ordered here the most! You have records of that, right?!
-    useAltBox: 0
-    voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: d64ce3c989db9b443adb62ae52e87b29, type: 3}
-    slideCharacterA: 0
-    slideADistance: 600
-    slideASpeed: 0.35
-    slideCharacterB: 1
-    slideDistance: 600
-    slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
-    shakeDuration: 0.25
-  - speaker: Manager (Markus)
-    speakerType: 1
-    text: Yes, you'd be right!
-    useAltBox: 0
-    voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
-    slideCharacterA: 0
-    slideADistance: 600
-    slideASpeed: 0.35
-    slideCharacterB: 1
+    slideCharacterB: 0
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 0
@@ -924,10 +860,9 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Cherri
     speakerType: 2
-    text: Hey! That's not fair! It's not my fault my body can't handle caffine that
-      much!
+    text: Hey! That's not fair!!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: a730fc3f0aabce240b7177d74ed4d778, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 898bd6bf236746b419620b6ff5a63b6f, type: 3}
@@ -941,7 +876,7 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Bill
-    speakerType: 1
+    speakerType: 2
     text: Well then beat it kid! I'm getting my coffee!
     useAltBox: 0
     voiceOver: {fileID: 0}
@@ -957,14 +892,31 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Manager (Markus)
+  - speaker: Jude
+    speakerType: 0
+    text: Talk about professional.
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.35
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
     speakerType: 2
     text: Uh- Uhm, Damon! Do you have any suggestions?
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -992,8 +944,8 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Damon
-    speakerType: 1
-    text: We can rock, paper, scissors?
+    speakerType: 2
+    text: We can just, idk, rock, paper, scissor?
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -1008,48 +960,14 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Jude
-    speakerType: 1
-    text: Rock, paper, scissors? Seriously?
-    useAltBox: 1
-    voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
-    rightCharacter: {fileID: 0}
-    slideCharacterA: 0
-    slideADistance: 600
-    slideASpeed: 0.35
-    slideCharacterB: 0
-    slideDistance: 600
-    slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
-    shakeDuration: 0.25
-  - speaker: Jude
-    speakerType: 1
-    text: But then again, that is fairer than whatever the two were suggesting.
-    useAltBox: 1
-    voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
-    leftCharacter: {fileID: 21300000, guid: 0916c0b42c97ba64096670d4938fcdd0, type: 3}
-    rightCharacter: {fileID: 0}
-    slideCharacterA: 0
-    slideADistance: 600
-    slideASpeed: 0.35
-    slideCharacterB: 0
-    slideDistance: 600
-    slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
-    shakeDuration: 0.25
-  - speaker: Manager (Markus)
+  - speaker: Manager
     speakerType: 2
-    text: Oh I like that idea! Great thinking, Damon!
+    text: Rock, Paper, Scissors... Yes..
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 4b5522578c80b304faea72b343dad4cf, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -1059,7 +977,42 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Manager (Markus)
+  - speaker: Manager
+    speakerType: 2
+    text: Why that's a great suggestion, Damon!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.35
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 0
+    text: the crowd behind me chattered, some were agreeing on the idea, some were
+      doubting that this activity will be short.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.35
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
     speakerType: 2
     text: I'll set up a quick competition of Rock, Paper, Scissors, bracket style,
       and winner gets the coffee!
@@ -1067,7 +1020,7 @@ MonoBehaviour:
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -1079,7 +1032,7 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Bill
     speakerType: 2
-    text: Are you freaking kidding me!? A game? I don't have time for this!
+    text: Rock, Paper, Scissors? Seriously? I'm going to be late in 20 minutes!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -1098,7 +1051,7 @@ MonoBehaviour:
     speakerType: 2
     text: Well, I'm down with whatever~
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 78f69c758747bfb4c9b95862ab5bc6cd, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 465a375156e77d64b95a8644cc275779, type: 3}
@@ -1115,7 +1068,7 @@ MonoBehaviour:
     speakerType: 2
     text: Bring it on, people! Get ready to get owned by Cherri!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 4aa02e240cf0fcb498420e1795127225, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 43fc16dd601efcd42a8c13aab54b2b6a, type: 3}
@@ -1128,31 +1081,31 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Jude
-    speakerType: 1
-    text: I guess I can spare some time, working at home finally has its perks.
+  - speaker: Manager
+    speakerType: 2
+    text: I mostly hear agreement on the competition, so I'm sorry, Bill.
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
-    leftCharacter: {fileID: 21300000, guid: 65be4b61e9771814d8504aa999532707, type: 3}
-    rightCharacter: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 0
+    slideCharacterB: 1
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Manager (Markus)
-    speakerType: 1
-    text: That's the spirit, buddy!
+  - speaker: Manager
+    speakerType: 2
+    text: So if you want that coffee, you better win it!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -1164,8 +1117,7 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Bill
     speakerType: 2
-    text: Oh you're pissing me off, "work-at-home". You think your job sooo important?
-      Well I need that coffee more than anything.
+    text: Grrrr... Fine! I guess I can spare some time.
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -1180,15 +1132,48 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Jude
-    speakerType: 1
-    text: He ready his hand, looking at me very angrily. Great, I became a target
-      for announcing my workplace.
-    useAltBox: 1
+  - speaker: Manager
+    speakerType: 2
+    text: Now that's the spirit, buddy!
+    useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 6e97d387b458a194d8747a0ef564ca15, type: 3}
-    rightCharacter: {fileID: 21300000, guid: bbf428ec7a84fb341a0d4b1cab717729, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 76ed1b4672a1acb42ac87c81e72e06ba, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.35
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: Ah! I've just realized, we can finally use the Coffee Arena!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.35
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 1
+    shakeIntensity: 5
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 1
+    text: Coffee Arena?
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 0916c0b42c97ba64096670d4938fcdd0, type: 3}
+    rightCharacter: {fileID: 0}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -1198,32 +1183,84 @@ MonoBehaviour:
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Manager (Markus)
-    speakerType: 2
-    text: H-Hold on! I haven't even made the bracket system yet!
-    useAltBox: 0
+  - speaker: Jude
+    speakerType: 0
+    text: This coffee shop has an arena?? What the...
+    useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
+    rightCharacter: {fileID: 0}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
-    slideCharacterB: 1
+    slideCharacterB: 0
     slideDistance: 600
     slideSpeed: 0.35
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
-  - speaker: Bill
+  - speaker: Manager
     speakerType: 2
-    text: Do if after I pown this stupid working wannabe! You ready?
+    text: Ah, you're a first timer, aren't you?
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
-    leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
+    leftCharacter: {fileID: 21300000, guid: 2ef201273c784cd4c8dd0cb2e9498d4f, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
     slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 1
+    text: Not really, I just pick up my coffee- I usually order through app.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 1257de255bfde21489c428cfc2992c43, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: I see! Well, you're in for a treat~
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 1257de255bfde21489c428cfc2992c43, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 0
+    text: The manager then led everyone to the back, directing us to this "Coffee
+      Arena"
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    slideCharacterA: 1
     slideADistance: 600
     slideASpeed: 0.35
     slideCharacterB: 1
@@ -1233,16 +1270,464 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
-    text: Ready.
+    speakerType: 0
+    text: I did not know what to expect on this arena, but this is massive! H-how
+      did they even manage to have this behind their shop...?
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 21300000, guid: 0916c0b42c97ba64096670d4938fcdd0, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 1
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: Well everyone, welcome to the Coffee Arena!
     useAltBox: 0
     voiceOver: {fileID: 0}
-    newBackground: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: Thanks to Damon, we will be playing Rock, Paper, Scissors!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: I think everyone knows how to play this, right? Easy as 1, 2, 3!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 76ed1b4672a1acb42ac87c81e72e06ba, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Just get into it already, jeez.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: e22f7efe1ac07b542a4457b68c5be327, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: I'll get on with it once I finish bracketing~! So hold your horses, everyone!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Gosh, darn it, Markus! I don't have time for this! Just make me compete
+      first!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: Really? Why that's fine by me... But once you lose, you're eliminated.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: Sounds clear?
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 4b5522578c80b304faea72b343dad4cf, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Yeah, yeah, whatever.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: e22f7efe1ac07b542a4457b68c5be327, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Cherri
+    speakerType: 2
+    text: That's a stupid decision! You're gonna lose! Boo!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 43fc16dd601efcd42a8c13aab54b2b6a, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Shut it, kid! You're lucky I'm not picking you as an opponent.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Cherri
+    speakerType: 2
+    text: '*blows raspberry*'
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 8f53f41bb8b787746904b7925446ea1c, type: 3}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 898bd6bf236746b419620b6ff5a63b6f, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Manager
+    speakerType: 2
+    text: Then who would your opponent would be?
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Him.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: b3618b83fe039a048bca25cb61d0b692, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 0
+    text: He was pointing at me?!
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 1
+    text: Me?? What did I do?
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Exactly. You're so clueless, I think I have a fair chance on winning against
+      you.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: So, what do you say? And answer quickly!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 0
+    text: Is this guy nuts? Now i'm anxious... I really need that coffee to calm
+      me down...
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Cherri
+    speakerType: 2
+    text: You can do it, brown haired guy! Defeat that balding man!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: cd4640ba150fddf4895543a03a51f74b, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 1
+    text: Everyone started to cheer on me, unexpectedly. I guess everyone hate this
+      guy or something.
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 21300000, guid: 6e97d387b458a194d8747a0ef564ca15, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Calling me bald and letting everyone cheer on that wannabe main character?
+      Oh you just made me even angrier!
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 1
+    shakeIntensity: 10
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Come on then, wannabe. Show them how you fail.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 0
+    text: I guess I don't have much choice anyway...
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Jude
+    speakerType: 1
+    text: Sure, I'm ready.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 21300000, guid: f85109ac0a9c2de4daf25a4cc5a988ac, type: 3}
     rightCharacter: {fileID: 0}
     slideCharacterA: 0
     slideADistance: 600
-    slideASpeed: 0.35
+    slideASpeed: 0.3
+    slideCharacterB: 0
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Bill
+    speakerType: 2
+    text: Now that's what I would like to hear.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: bbf428ec7a84fb341a0d4b1cab717729, type: 3}
+    slideCharacterA: 0
+    slideADistance: 600
+    slideASpeed: 0.3
     slideCharacterB: 0
     slideDistance: 600
     slideSpeed: 0.35

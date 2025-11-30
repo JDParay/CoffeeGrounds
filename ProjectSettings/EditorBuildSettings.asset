@@ -27,6 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Story2.unity
     guid: 822ea1aba754e7d4082585d35a72c87e
   - enabled: 1
+    path: Assets/Scenes/MainGame_CherriBattle.unity
+    guid: 6f61b5df2c3d9c74783c7b04fad5327e
+  - enabled: 1
+    path: Assets/Scenes/Story2_AltEnd.unity
+    guid: 197d3d7336d643048af0487c103de47e
+  - enabled: 1
+    path: Assets/Scenes/Story3.unity
+    guid: 6e06208127071634b8bd09715051ff05
+  - enabled: 1
     path: Assets/Scenes/MainGame_DamonBattle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

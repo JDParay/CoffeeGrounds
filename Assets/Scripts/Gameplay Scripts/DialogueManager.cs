@@ -31,14 +31,19 @@ public class DialogueManager : MonoBehaviour
     public float typeSpeed = 0.03f;
 
     [Header("Speaker Highlight")]
-    public Color activeColor = Color.white;                          // speaking = normal
-    public Color fadedColor = new Color(0.55f, 0.55f, 0.55f, 1f);     // gray when NOT speaking
+    public Color activeColor = Color.white;                 
+    public Color fadedColor = new Color(0.55f, 0.55f, 0.55f, 1f); 
 
     [Header("Scene Transition Panels")]
-    public GameObject vsPanel;           // shows after final dialogue
-    public GameObject sceneTransition;   // transition before scene loads
-    public float vsDisplayDuration = 3f; // how long VS stays before switch
-    public float transitionDuration = 1.5f; // wait for animation
+    public GameObject vsPanel;           
+    public GameObject sceneTransition;   
+    public float vsDisplayDuration = 3f; 
+    public float transitionDuration = 1.5f; 
+
+    [Header("BGM + SFX")]
+    public AudioSource bgmSource;
+    public AudioClip VersusSFX;
+    public float bgmFadeDuration = 2f;
     
     [Header("Scene Transition")]
     public EnterGameTransition transitionManager;
@@ -269,8 +274,31 @@ public class DialogueManager : MonoBehaviour
         rt.localPosition = originalPos;
     }
 
+    IEnumerator FadeOutBGM()
+    {
+        float startVolume = bgmSource.volume;
+        float t = 0f;
+
+        while (t < bgmFadeDuration)
+        {
+            bgmSource.volume = Mathf.Lerp(startVolume, 0f, t / bgmFadeDuration);
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        bgmSource.volume = 0f;
+        bgmSource.Stop();
+    }
+
+
     IEnumerator EndDialogueSequence()
     {
+        if (bgmSource != null)
+            yield return StartCoroutine(FadeOutBGM());
+
+        if (voiceSource != null && VersusSFX != null)
+            voiceSource.PlayOneShot(VersusSFX);
+
         if (vsPanel != null) 
             vsPanel.SetActive(true);
 
@@ -281,5 +309,6 @@ public class DialogueManager : MonoBehaviour
 
         transitionManager.PlayStart();
     }
+
 
 }
