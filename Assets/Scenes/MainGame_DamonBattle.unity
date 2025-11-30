@@ -1524,12 +1524,31 @@ MonoBehaviour:
     mad: {fileID: 527898234}
     draw: {fileID: 1463020674}
   enemyNeutral: {fileID: 295544397}
+  finalWinSprite: {fileID: 1997243710}
+  finalLoseSprite: {fileID: 1750192832}
   coffeeMeter: {fileID: 777496961}
   ProbabilityButton: {fileID: 345169705}
   EliminationButton: {fileID: 152589821}
   BlessingButton: {fileID: 160178461}
   probabilityText: {fileID: 906500119}
+  enemyVoiceSource: {fileID: 0}
+  loseLines:
+  - {fileID: 0}
+  - {fileID: 0}
+  winLines:
+  - {fileID: 0}
+  - {fileID: 0}
+  drawLines:
+  - {fileID: 0}
+  - {fileID: 0}
+  afkLine: {fileID: 0}
+  finalWinLine: {fileID: 0}
+  finalLoseLine: {fileID: 0}
+  afkTime: 5
   blockerPNGs: []
+  transitionController: {fileID: 0}
+  winSceneName: 
+  loseSceneName: 
 --- !u!4 &373645471
 Transform:
   m_ObjectHideFlags: 0
@@ -2275,7 +2294,7 @@ SpriteRenderer:
   m_Size: {x: 5.33, y: 8.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &729903908
@@ -2399,7 +2418,7 @@ MonoBehaviour:
   slider: {fileID: 777496962}
   maxValue: 150
   minValue: 0
-  currentValue: 50
+  currentValue: 10
 --- !u!114 &777496962
 MonoBehaviour:
   m_ObjectHideFlags: 0

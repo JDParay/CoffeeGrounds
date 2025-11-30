@@ -79,7 +79,7 @@ MonoBehaviour:
     slideASpeed: 0.35
     slideCharacterB: 1
     slideDistance: 600
-    slideSpeed: 2
+    slideSpeed: 1
     shakeBackground: 0
     shakeIntensity: 20
     shakeDuration: 0.25
@@ -87,7 +87,7 @@ MonoBehaviour:
     speakerType: 1
     text: The Creamy White Macchiato please for Jude? I ordered through the app.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 32d6d2ae6fb3d104eb686b06ced8806a, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 2ef201273c784cd4c8dd0cb2e9498d4f, type: 3}
     rightCharacter: {fileID: 21300000, guid: 9537c40159f21d242876a6ee6216aec6, type: 3}
@@ -104,7 +104,7 @@ MonoBehaviour:
     speakerType: 2
     text: Oh dear, another customer...
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 1f6b57b830ca0c147b4277689496b059, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 3396216c8894d91428bf5476eb630d13, type: 3}
@@ -122,7 +122,7 @@ MonoBehaviour:
     text: I'm afraid your Creamy White Macchiato hasn't been made since you ordered,
       sir. There were some complications...
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c0db1173f49dcce4fba754447deb9125, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 66a9f8a5b693a9c4aad7771c7baae8d3, type: 3}
@@ -139,7 +139,7 @@ MonoBehaviour:
     speakerType: 1
     text: Complications? Like what exactly?
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 939700dc51df5bf4bad031c9e1170187, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 0916c0b42c97ba64096670d4938fcdd0, type: 3}
     rightCharacter: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
     speakerType: 1
     text: Grounded?
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 939700dc51df5bf4bad031c9e1170187, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
@@ -190,7 +190,7 @@ MonoBehaviour:
     speakerType: 2
     text: It's not in it's right mind as of now...
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c0db1173f49dcce4fba754447deb9125, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 3396216c8894d91428bf5476eb630d13, type: 3}
@@ -204,7 +204,7 @@ MonoBehaviour:
     shakeIntensity: 20
     shakeDuration: 0.25
   - speaker: Jude
-    speakerType: 1
+    speakerType: 0
     text: What does that even mean...?
     useAltBox: 1
     voiceOver: {fileID: 0}
@@ -224,7 +224,7 @@ MonoBehaviour:
     speakerType: 0
     text: What it means is that it's having a mental breakdown!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 603b470ef31556d40b14de5ad9d64215, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
@@ -258,7 +258,7 @@ MonoBehaviour:
     speakerType: 1
     text: Coffee machines... can have mental breakdowns?
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 6795ed88595314c42af21579503828e1, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
     rightCharacter: {fileID: 0}
@@ -309,7 +309,7 @@ MonoBehaviour:
     speakerType: 2
     text: It's basically what we experience, let's just give it time.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: b76546700863cd347a57c01c9bc7bc0e, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 7e02f3206edafcc4e9fd12b1b936938b, type: 3}
@@ -343,7 +343,7 @@ MonoBehaviour:
     speakerType: 2
     text: TIME?? I don't have time for this, I'm gonna be late!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c269f2605bb8de744bf64fd2eb4a30a9, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
@@ -360,7 +360,7 @@ MonoBehaviour:
     speakerType: 2
     text: Sir Bill, if you're in a hurry, you can just find a different coffee shop...
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c0db1173f49dcce4fba754447deb9125, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 66a9f8a5b693a9c4aad7771c7baae8d3, type: 3}
@@ -378,7 +378,7 @@ MonoBehaviour:
     text: You know dang well I ain't going without your special, Nicole! It's too
       dang good and it's too dang bad that other cafe's can't replicate it!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 63c6810f4ba5c254197757d569203ac9, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
@@ -395,7 +395,7 @@ MonoBehaviour:
     speakerType: 0
     text: The other customers in the shop agreed on Bill's complaint, I did too.
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: f559541906da23047bfa73eddb3288a4, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
@@ -413,7 +413,7 @@ MonoBehaviour:
     text: They started asking multiple questions at once, the most prominent being
       "When is it coming back?"
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: f559541906da23047bfa73eddb3288a4, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
@@ -430,7 +430,7 @@ MonoBehaviour:
     speakerType: 0
     text: 'The yell became evident that we are in-need of caffine. '
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: f559541906da23047bfa73eddb3288a4, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
@@ -448,7 +448,7 @@ MonoBehaviour:
     text: Soon, a guy from the back emerges, I think this is the manager. Never met
       the guy personally.
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: f559541906da23047bfa73eddb3288a4, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
@@ -465,7 +465,7 @@ MonoBehaviour:
     speakerType: 2
     text: Ah hm... Seems like things have transpired here...
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 98b689b7e58c328439abc13a1ff8f386, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
@@ -482,7 +482,7 @@ MonoBehaviour:
     speakerType: 2
     text: 'Sir, the regular costumers are scary without their coffee... '
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: f0d06f385f47e5641bd09b9d08f709c8, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 9a84ad9e39e235d439b425c1c775baf7, type: 3}
@@ -499,7 +499,7 @@ MonoBehaviour:
     speakerType: 2
     text: Hold on tight, Nicole... Let me handle this.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 98b689b7e58c328439abc13a1ff8f386, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
@@ -535,7 +535,7 @@ MonoBehaviour:
     text: My dearly beloved customers, first I would like to say that I am so glad
       that you have consistently chosen 'Coffee Grounds' as your sacred place!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
@@ -552,7 +552,7 @@ MonoBehaviour:
     speakerType: 2
     text: However, It is a shame that our coffee machine is not feeling well...
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: b06aa48cdf3965c4a815f6da8771e035, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
@@ -569,7 +569,7 @@ MonoBehaviour:
     speakerType: 0
     text: The customers were beginning to start yelling again...
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: f559541906da23047bfa73eddb3288a4, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
@@ -586,7 +586,7 @@ MonoBehaviour:
     speakerType: 2
     text: Hold it! Wait- Let me finish!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
@@ -596,14 +596,14 @@ MonoBehaviour:
     slideCharacterB: 0
     slideDistance: 600
     slideSpeed: 0.35
-    shakeBackground: 0
-    shakeIntensity: 20
+    shakeBackground: 1
+    shakeIntensity: 15
     shakeDuration: 0.25
   - speaker: Manager
     speakerType: 2
     text: I do have good news... and bad news...
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 4b5522578c80b304faea72b343dad4cf, type: 3}
@@ -637,7 +637,7 @@ MonoBehaviour:
     speakerType: 0
     text: Me and everyone else cheered, finally, thought I'd be here for a while.
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0ae64478057c8e84488a6cadc5f0ef20, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 65be4b61e9771814d8504aa999532707, type: 3}
     rightCharacter: {fileID: 0}
@@ -654,7 +654,7 @@ MonoBehaviour:
     speakerType: 2
     text: But the bad news is...
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: e9cd20a562ba2354dbbaf26f89b7554e, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
@@ -671,7 +671,7 @@ MonoBehaviour:
     speakerType: 2
     text: It can only make ONE for the meantime!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: b06aa48cdf3965c4a815f6da8771e035, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
     rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
@@ -688,7 +688,7 @@ MonoBehaviour:
     speakerType: 0
     text: The crowd went sour, cheers turned to 'boos!'
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: f559541906da23047bfa73eddb3288a4, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
@@ -705,7 +705,7 @@ MonoBehaviour:
     speakerType: 2
     text: What the heck, Markus!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c269f2605bb8de744bf64fd2eb4a30a9, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: be31768f8098c9e4e900a31c734403a1, type: 3}
@@ -722,7 +722,7 @@ MonoBehaviour:
     speakerType: 2
     text: I'm just doing my job, Bill... Our little coffee machine is still emotional.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
@@ -740,7 +740,7 @@ MonoBehaviour:
     text: This is why you don't make your coffee machines real, people! they're not
       pinocchio!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 63c6810f4ba5c254197757d569203ac9, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
@@ -758,7 +758,7 @@ MonoBehaviour:
     text: Wait, wait- if it can only dispense one order, whose order will it be?
       :3
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: a730fc3f0aabce240b7177d74ed4d778, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 465a375156e77d64b95a8644cc275779, type: 3}
@@ -793,7 +793,7 @@ MonoBehaviour:
     text: Honestly, I was thinking of just pulling sticks... I mean we could try
       that, yeah?
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c8bf7b2d55997484bbe178999968edab, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
@@ -827,7 +827,7 @@ MonoBehaviour:
     speakerType: 2
     text: Both ideas suck! I don't have time for this!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 63c6810f4ba5c254197757d569203ac9, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
@@ -879,7 +879,7 @@ MonoBehaviour:
     speakerType: 2
     text: Well then beat it kid! I'm getting my coffee!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
@@ -913,7 +913,7 @@ MonoBehaviour:
     speakerType: 2
     text: Uh- Uhm, Damon! Do you have any suggestions?
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: b06aa48cdf3965c4a815f6da8771e035, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
@@ -930,10 +930,10 @@ MonoBehaviour:
     speakerType: 2
     text: Hmmmm....
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 80a1bb6f18dea174094838c866663f44, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 1577ae3688054fd49a5fefb222868417, type: 3}
+    rightCharacter: {fileID: 21300000, guid: f136fc711e5bc1a4c8ce1d86613d02dd, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -947,10 +947,10 @@ MonoBehaviour:
     speakerType: 2
     text: We can just, idk, rock, paper, scissor?
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 97db4abe78e579845bf4d75b7f30b400, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 73cf74c20b3b3914a8fd1a882e981c34, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 7e02f3206edafcc4e9fd12b1b936938b, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.35
@@ -981,7 +981,7 @@ MonoBehaviour:
     speakerType: 2
     text: Why that's a great suggestion, Damon!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
@@ -999,7 +999,7 @@ MonoBehaviour:
     text: the crowd behind me chattered, some were agreeing on the idea, some were
       doubting that this activity will be short.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 1a00c423078592445969242908c72761, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
@@ -1017,7 +1017,7 @@ MonoBehaviour:
     text: I'll set up a quick competition of Rock, Paper, Scissors, bracket style,
       and winner gets the coffee!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
@@ -1034,7 +1034,7 @@ MonoBehaviour:
     speakerType: 2
     text: Rock, Paper, Scissors? Seriously? I'm going to be late in 20 minutes!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
@@ -1083,7 +1083,7 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Manager
     speakerType: 2
-    text: I mostly hear agreement on the competition, so I'm sorry, Bill.
+    text: I think majority is up for the challenge, so I apologize for this, Bill.
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -1102,7 +1102,7 @@ MonoBehaviour:
     speakerType: 2
     text: So if you want that coffee, you better win it!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
@@ -1119,7 +1119,7 @@ MonoBehaviour:
     speakerType: 2
     text: Grrrr... Fine! I guess I can spare some time.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: e22f7efe1ac07b542a4457b68c5be327, type: 3}
@@ -1136,9 +1136,9 @@ MonoBehaviour:
     speakerType: 2
     text: Now that's the spirit, buddy!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 0}
-    leftCharacter: {fileID: 21300000, guid: 6e97d387b458a194d8747a0ef564ca15, type: 3}
+    leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 76ed1b4672a1acb42ac87c81e72e06ba, type: 3}
     slideCharacterA: 0
     slideADistance: 600
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Manager
     speakerType: 2
-    text: Ah! I've just realized, we can finally use the Coffee Arena!
+    text: Ah! I've just realized, we can finally use the Coffee Arena again!
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
@@ -1170,7 +1170,7 @@ MonoBehaviour:
     speakerType: 1
     text: Coffee Arena?
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 6795ed88595314c42af21579503828e1, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 0916c0b42c97ba64096670d4938fcdd0, type: 3}
     rightCharacter: {fileID: 0}
@@ -1189,7 +1189,7 @@ MonoBehaviour:
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
-    leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
+    leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
     slideCharacterA: 0
     slideADistance: 600
@@ -1206,7 +1206,7 @@ MonoBehaviour:
     useAltBox: 0
     voiceOver: {fileID: 0}
     newBackground: {fileID: 0}
-    leftCharacter: {fileID: 21300000, guid: 2ef201273c784cd4c8dd0cb2e9498d4f, type: 3}
+    leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
     slideCharacterA: 0
     slideADistance: 600
@@ -1238,7 +1238,7 @@ MonoBehaviour:
     speakerType: 2
     text: I see! Well, you're in for a treat~
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c8bf7b2d55997484bbe178999968edab, type: 3}
     newBackground: {fileID: 0}
     leftCharacter: {fileID: 21300000, guid: 1257de255bfde21489c428cfc2992c43, type: 3}
     rightCharacter: {fileID: 0}
@@ -1274,7 +1274,7 @@ MonoBehaviour:
     text: I did not know what to expect on this arena, but this is massive! H-how
       did they even manage to have this behind their shop...?
     useAltBox: 1
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 6795ed88595314c42af21579503828e1, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 21300000, guid: 0916c0b42c97ba64096670d4938fcdd0, type: 3}
     rightCharacter: {fileID: 0}
@@ -1291,7 +1291,7 @@ MonoBehaviour:
     speakerType: 2
     text: Well everyone, welcome to the Coffee Arena!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
@@ -1325,7 +1325,7 @@ MonoBehaviour:
     speakerType: 2
     text: I think everyone knows how to play this, right? Easy as 1, 2, 3!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: b06aa48cdf3965c4a815f6da8771e035, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 76ed1b4672a1acb42ac87c81e72e06ba, type: 3}
@@ -1342,7 +1342,7 @@ MonoBehaviour:
     speakerType: 2
     text: Just get into it already, jeez.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: e22f7efe1ac07b542a4457b68c5be327, type: 3}
@@ -1359,7 +1359,7 @@ MonoBehaviour:
     speakerType: 2
     text: I'll get on with it once I finish bracketing~! So hold your horses, everyone!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
@@ -1377,7 +1377,7 @@ MonoBehaviour:
     text: Gosh, darn it, Markus! I don't have time for this! Just make me compete
       first!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c269f2605bb8de744bf64fd2eb4a30a9, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
@@ -1392,9 +1392,10 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Manager
     speakerType: 2
-    text: Really? Why that's fine by me... But once you lose, you're eliminated.
+    text: Really? Why that's fine by me... But that means you could be eliminated
+      first.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 98b689b7e58c328439abc13a1ff8f386, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
@@ -1428,7 +1429,7 @@ MonoBehaviour:
     speakerType: 2
     text: Yeah, yeah, whatever.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: e22f7efe1ac07b542a4457b68c5be327, type: 3}
@@ -1445,10 +1446,10 @@ MonoBehaviour:
     speakerType: 2
     text: That's a stupid decision! You're gonna lose! Boo!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 8f53f41bb8b787746904b7925446ea1c, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
-    rightCharacter: {fileID: 21300000, guid: 43fc16dd601efcd42a8c13aab54b2b6a, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 898bd6bf236746b419620b6ff5a63b6f, type: 3}
     slideCharacterA: 0
     slideADistance: 600
     slideASpeed: 0.3
@@ -1462,7 +1463,7 @@ MonoBehaviour:
     speakerType: 2
     text: Shut it, kid! You're lucky I'm not picking you as an opponent.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 63c6810f4ba5c254197757d569203ac9, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
@@ -1528,7 +1529,7 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Jude
     speakerType: 0
-    text: He was pointing at me?!
+    text: He... He was pointing at me?!
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
@@ -1547,7 +1548,7 @@ MonoBehaviour:
     speakerType: 1
     text: Me?? What did I do?
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 6795ed88595314c42af21579503828e1, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
     rightCharacter: {fileID: 0}
@@ -1565,7 +1566,7 @@ MonoBehaviour:
     text: Exactly. You're so clueless, I think I have a fair chance on winning against
       you.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 4ccbce328bf29c949bc516ff2d2167d9, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
@@ -1582,7 +1583,7 @@ MonoBehaviour:
     speakerType: 2
     text: So, what do you say? And answer quickly!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 0}
@@ -1617,7 +1618,7 @@ MonoBehaviour:
     speakerType: 2
     text: You can do it, brown haired guy! Defeat that balding man!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: c689dc6d3bd89884a87bc6514dc69247, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: cd4640ba150fddf4895543a03a51f74b, type: 3}
@@ -1632,8 +1633,8 @@ MonoBehaviour:
     shakeDuration: 0.25
   - speaker: Jude
     speakerType: 1
-    text: Everyone started to cheer on me, unexpectedly. I guess everyone hate this
-      guy or something.
+    text: Everyone started to cheer on me, unexpectedly. I guess everyone has a vendetta
+      on this guy or something.
     useAltBox: 1
     voiceOver: {fileID: 0}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
@@ -1653,7 +1654,7 @@ MonoBehaviour:
     text: Calling me bald and letting everyone cheer on that wannabe main character?
       Oh you just made me even angrier!
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 8d8500ef5f5888e4eb0ad31c391d758d, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
@@ -1704,7 +1705,7 @@ MonoBehaviour:
     speakerType: 1
     text: Sure, I'm ready.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 32d6d2ae6fb3d104eb686b06ced8806a, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 21300000, guid: f85109ac0a9c2de4daf25a4cc5a988ac, type: 3}
     rightCharacter: {fileID: 0}
@@ -1721,7 +1722,7 @@ MonoBehaviour:
     speakerType: 2
     text: Now that's what I would like to hear.
     useAltBox: 0
-    voiceOver: {fileID: 0}
+    voiceOver: {fileID: 8300000, guid: 4ccbce328bf29c949bc516ff2d2167d9, type: 3}
     newBackground: {fileID: 21300000, guid: 4de2fcda38e93054aab787582837a2c2, type: 3}
     leftCharacter: {fileID: 0}
     rightCharacter: {fileID: 21300000, guid: bbf428ec7a84fb341a0d4b1cab717729, type: 3}

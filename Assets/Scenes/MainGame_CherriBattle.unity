@@ -1547,7 +1547,6 @@ MonoBehaviour:
   ProbabilityButton: {fileID: 345169705}
   EliminationButton: {fileID: 152589821}
   BlessingButton: {fileID: 160178461}
-  probabilityText: {fileID: 906500119}
   enemyVoiceSource: {fileID: 1503508712}
   loseLines:
   - {fileID: 8300000, guid: 10085588db72320439fae4305286f627, type: 3}
@@ -1562,10 +1561,11 @@ MonoBehaviour:
   finalWinLine: {fileID: 8300000, guid: 31e6374da448a954da24a85764ec1a60, type: 3}
   finalLoseLine: {fileID: 8300000, guid: 3304c130e4e9f92438c019c477462b24, type: 3}
   afkTime: 5
-  blockerPNGs: []
   transitionController: {fileID: 799213459}
   winSceneName: Story2
   loseSceneName: Story2_AltEnd
+  historyUI: {fileID: 0}
+  probabilityText: {fileID: 906500119}
 --- !u!4 &373645471
 Transform:
   m_ObjectHideFlags: 0

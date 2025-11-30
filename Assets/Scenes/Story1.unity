@@ -1725,7 +1725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.50980395}
+  m_Color: {r: 0.18867922, g: 0.0738227, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2522,7 +2522,7 @@ MonoBehaviour:
   fadedColor: {r: 0.55, g: 0.55, b: 0.55, a: 1}
   vsPanel: {fileID: 646093175}
   sceneTransition: {fileID: 1986495217}
-  vsDisplayDuration: 1.5
+  vsDisplayDuration: 2
   transitionDuration: 3
   bgmSource: {fileID: 136998909}
   VersusSFX: {fileID: 8300000, guid: 23e095e04ab013546b418b1f16866190, type: 3}

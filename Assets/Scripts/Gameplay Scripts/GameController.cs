@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class RPSGameController : MonoBehaviour
@@ -34,21 +34,18 @@ public class RPSGameController : MonoBehaviour
     public CoffeeMeter coffeeMeter;
 
     [Header("Player Ability")]
-public CGRPSEnlarger ProbabilityButton;
-public CGRPSEnlarger EliminationButton;
-public CGRPSEnlarger BlessingButton;
+    public CGRPSEnlarger ProbabilityButton;
+    public CGRPSEnlarger EliminationButton;
+    public CGRPSEnlarger BlessingButton;
     private int playerWinStreak = 0;
     private int playerDrawStreak = 0;
-    private int playerFailStreak = 0;
+    private int playerFailStreak = 3;
     private bool abilityReady = false;
     private bool abilityActive = false; 
     private bool eliminationAbilityReady = false; 
     private bool eliminationAbilityActive = false;
     private bool winStreakReady = false;
     private bool winStreakActive = false;
-
-    public TMPro.TextMeshProUGUI probabilityText;
-    private RPSChoice nextEnemyChoice;
 
     [Header("Voice Lines")]
     public AudioSource enemyVoiceSource;
@@ -63,9 +60,6 @@ public CGRPSEnlarger BlessingButton;
     private float afkTimer = 0f;
     private bool afkTriggered = false;
 
-    [Header("Blocker PNGs (separate inputs)")]
-    public GameObject[] blockerPNGs;
-
     [Header("Scene Transition")]
     public EnterGameTransition transitionController;
 
@@ -73,8 +67,12 @@ public CGRPSEnlarger BlessingButton;
     public string winSceneName;
     public string loseSceneName;
 
-    private RPSChoice? lastPlayerChoice = null;
+    [Header("History UI")]
+    public HistoryManager historyUI; // Reference to your history manager
 
+    private RPSChoice? lastPlayerChoice = null;
+    public TMPro.TextMeshProUGUI probabilityText;
+    private RPSChoice nextEnemyChoice;
 
     void Start()
     {
@@ -84,52 +82,47 @@ public CGRPSEnlarger BlessingButton;
         scissorsSprite.OnClicked += () => PlayerChose(RPSChoice.Scissors);
 
         if (ProbabilityButton != null)
-    {
-        ProbabilityButton.OnClicked += () =>
         {
-            Debug.Log("Probability skill clicked!");
-            ActivatePredictionAbility();
-        };
+            ProbabilityButton.OnClicked += () =>
+            {
+                Debug.Log("Probability skill clicked!");
+                ActivatePredictionAbility();
+            };
 
-        ProbabilityButton.boxCollider.enabled = true;
-    }
+            ProbabilityButton.boxCollider.enabled = true;
+        }
 
-    if (EliminationButton != null)
-    {
-        EliminationButton.OnClicked += () =>
+        if (EliminationButton != null)
         {
-            Debug.Log("Elimination skill clicked!");
-            ActivateEliminationAbility();
-        };
+            EliminationButton.OnClicked += () =>
+            {
+                Debug.Log("Elimination skill clicked!");
+                ActivateEliminationAbility();
+            };
 
-        EliminationButton.boxCollider.enabled = true;
-    }
+            EliminationButton.boxCollider.enabled = true;
+        }
 
-    if (BlessingButton != null)
-    {
-        BlessingButton.OnClicked += () =>
+        if (BlessingButton != null)
         {
-            Debug.Log("Blessing skill clicked!");
-            ActivateBlessingAbility();
-        };
+            BlessingButton.OnClicked += () =>
+            {
+                Debug.Log("Blessing skill clicked!");
+                ActivateBlessingAbility();
+            };
 
-        BlessingButton.boxCollider.enabled = true;
-    }
+            BlessingButton.boxCollider.enabled = true;
+        }
 
         ShowOnly(enemyNeutral);
 
         if (coffeeMeter != null)
         {
-            coffeeMeter.OnMaxReached += () =>
-            {
-                GameWon();
-            };
-            coffeeMeter.OnMinReached += () =>
-            {
-                GameLost();
-            };
+            coffeeMeter.OnMaxReached += () => GameWon();
+            coffeeMeter.OnMinReached += () => GameLost();
         }
     }
+
     void Update()
     {
         afkTimer += Time.deltaTime;
@@ -144,41 +137,37 @@ public CGRPSEnlarger BlessingButton;
         }
     }
 
-
     void PlayerChose(RPSChoice playerChoice)
     {
-    afkTimer = 0f;
-    afkTriggered = false;
+        afkTimer = 0f;
+        afkTriggered = false;
 
         if (abilityActive && probabilityText != null)
-            {
+        {
             probabilityText.text = "";
             abilityActive = false;
             Animator anim = ProbabilityButton.GetComponent<Animator>();
-            if (anim != null)
-                anim.speed = 1f;
+            if (anim != null) anim.speed = 1f;
             ProbabilityButton.boxCollider.enabled = true;
-            }
+        }
 
         if (eliminationAbilityActive)
-            {
-            if (EliminationButton != null)
-                EliminationButton.boxCollider.enabled = true;
-                Animator anim = EliminationButton.GetComponent<Animator>();
-                if (anim != null)
-                anim.speed = 1f;  
-            }
+        {
+            if (EliminationButton != null) EliminationButton.boxCollider.enabled = true;
+            Animator anim = EliminationButton.GetComponent<Animator>();
+            if (anim != null) anim.speed = 1f;  
+        }
 
         if (!eliminationAbilityActive)
-        nextEnemyChoice = GetAdaptiveEnemyChoice();
+            nextEnemyChoice = GetAdaptiveEnemyChoice();
 
         RPSChoice enemyChoice = nextEnemyChoice;
 
         if (winStreakActive)
         {
-            if (BlessingButton != null)
-            BlessingButton.boxCollider.enabled = true;
+            if (BlessingButton != null) BlessingButton.boxCollider.enabled = true;
         }
+
         lastPlayerChoice = playerChoice;
         Debug.Log($"You: {playerChoice} | Enemy: {enemyChoice}");
 
@@ -186,84 +175,86 @@ public CGRPSEnlarger BlessingButton;
         HideAll();
 
         EnemyReaction chosen = GetEnemyReaction(enemyChoice);
-
-        if (result == 1)
+        
+        if (result == 1) // WIN
         {
-        chosen.mad.gameObject.SetActive(true);
-        PlayRandomLine(loseLines);
+            chosen.mad.gameObject.SetActive(true);
+            PlayRandomLine(loseLines);
 
-            if (coffeeMeter != null)
-                coffeeMeter.Increase();
+            if (coffeeMeter != null) coffeeMeter.Increase();
 
             playerWinStreak++;
+            playerDrawStreak = 0;
+            playerFailStreak = 0;
+
+            // Add history
+            historyUI?.AddResult(playerChoice.ToString(), enemyChoice.ToString(), "WIN");
 
             if (playerWinStreak >= 5 && !winStreakReady)
             {
                 winStreakReady = true;
-
                 if (BlessingButton != null)
                 {
                     BlessingButton.boxCollider.enabled = true;
                     BlessingButton.NotifySkillUnlocked();
                 }
-
                 Debug.Log("Win Streak Reward Ready! (5 wins)");
             }
-            
-            playerDrawStreak = 0;
-            playerFailStreak = 0;
-
         }
-        //ELIMINATION LOGIC
-        else if (result == -1)
+        else if (result == -1) // LOSE
         {
             chosen.happy.gameObject.SetActive(true);
             PlayRandomLine(winLines);
-            if (coffeeMeter != null)
-                coffeeMeter.Decrease();
+            if (coffeeMeter != null) coffeeMeter.Decrease();
 
             playerFailStreak++;
-
-        if (playerFailStreak >= 4 && !eliminationAbilityReady) 
-        {
-            eliminationAbilityReady = true;
-
-            if (EliminationButton != null)
-                {EliminationButton.boxCollider.enabled = true;
-                EliminationButton.NotifySkillUnlocked();}
-            Debug.Log("Elimination Ability Ready (4 fails).");
-        }
             playerWinStreak = 0;
             playerDrawStreak = 0;
-        }  
-        else
-        {   //DRAW LOGIC!!!! 
+
+            // Add history
+            historyUI?.AddResult(playerChoice.ToString(), enemyChoice.ToString(), "LOST");
+
+            if (playerFailStreak >= 4 && !eliminationAbilityReady)
+            {
+                eliminationAbilityReady = true;
+                if (EliminationButton != null)
+                {
+                    EliminationButton.boxCollider.enabled = true;
+                    EliminationButton.NotifySkillUnlocked();
+                }
+                Debug.Log("Elimination Ability Ready (4 fails).");
+            }
+        }
+        else // DRAW
+        {
             StartCoroutine(ShowDrawTemporarily(chosen.draw, 1f));
             PlayRandomLine(drawLines);
 
             playerDrawStreak++;
+            playerWinStreak = 0;
+            playerFailStreak = 0;
+
+            // Add history
+            historyUI?.AddResult(playerChoice.ToString(), enemyChoice.ToString(), "DRAW");
 
             if (playerDrawStreak >= 3 && !abilityReady)
             {
                 abilityReady = true;
-
                 if (ProbabilityButton != null)
-                    { ProbabilityButton.boxCollider.enabled = true;
-                    ProbabilityButton.NotifySkillUnlocked(); }
-
+                {
+                    ProbabilityButton.boxCollider.enabled = true;
+                    ProbabilityButton.NotifySkillUnlocked();
+                }
                 Debug.Log("Ability Unlocked! (3 Draws in a row)");
             }
-
-            playerWinStreak = 0;
-            playerFailStreak = 0;
         }
+
         Invoke(nameof(ResetChoices), 0.2f);
 
         if (eliminationAbilityActive)
         {
-        eliminationAbilityActive = false;
-        if (EliminationButton != null)
-            EliminationButton.boxCollider.enabled = true;
+            eliminationAbilityActive = false;
+            if (EliminationButton != null) EliminationButton.boxCollider.enabled = true;
         }
     }
 
@@ -279,34 +270,23 @@ public CGRPSEnlarger BlessingButton;
 
     void GameWon()
     {
-        // Stop any currently playing voice
-        if (enemyVoiceSource != null)
-            enemyVoiceSource.Stop();
-
-        ShowOnly(finalLoseSprite); // enemy defeated
-
+        if (enemyVoiceSource != null) enemyVoiceSource.Stop();
+        ShowOnly(finalLoseSprite);
         if (enemyVoiceSource != null && finalLoseLine != null)
-            enemyVoiceSource.PlayOneShot(finalLoseLine); // enemy reacts losing
+            enemyVoiceSource.PlayOneShot(finalLoseLine);
 
-        // Use transition to go to win scene
         if (transitionController != null)
         {
-            transitionController.Index = 0; // ensure correct offset if using Index
+            transitionController.Index = 0;
             StartCoroutine(LoadSceneWithTransition(winSceneName));
         }
-        else
-        {
-            StartCoroutine(LoadSceneAfterDelay(winSceneName, 2f));
-        }
+        else StartCoroutine(LoadSceneAfterDelay(winSceneName, 2f));
     }
 
     void GameLost()
     {
-        if (enemyVoiceSource != null)
-            enemyVoiceSource.Stop();
-
-        ShowOnly(finalWinSprite); // enemy victorious
-
+        if (enemyVoiceSource != null) enemyVoiceSource.Stop();
+        ShowOnly(finalWinSprite);
         if (enemyVoiceSource != null && finalWinLine != null)
             enemyVoiceSource.PlayOneShot(finalWinLine);
 
@@ -315,18 +295,13 @@ public CGRPSEnlarger BlessingButton;
             transitionController.Index = 0;
             StartCoroutine(LoadSceneWithTransition(loseSceneName));
         }
-        else
-        {
-            StartCoroutine(LoadSceneAfterDelay(loseSceneName, 2f));
-        }
+        else StartCoroutine(LoadSceneAfterDelay(loseSceneName, 2f));
     }
 
-
+    // ----------------------- Remaining Methods -----------------------
     RPSChoice GetAdaptiveEnemyChoice()
     {
-        float rockWeight = 1f;
-        float paperWeight = 1f;
-        float scissorsWeight = 1f;
+        float rockWeight = 1f, paperWeight = 1f, scissorsWeight = 1f;
 
         if (lastPlayerChoice.HasValue)
         {
@@ -338,11 +313,11 @@ public CGRPSEnlarger BlessingButton;
             }
         }
 
-        if (abilityActive) 
-        { 
-            abilityActive = false; 
-            if (probabilityText != null) 
-            probabilityText.text = "";}
+        if (abilityActive)
+        {
+            abilityActive = false;
+            if (probabilityText != null) probabilityText.text = "";
+        }
 
         float total = rockWeight + paperWeight + scissorsWeight;
         float rand = Random.Range(0f, total);
@@ -352,43 +327,18 @@ public CGRPSEnlarger BlessingButton;
         else return RPSChoice.Scissors;
     }
 
-    void DisableWrongChoices(RPSChoice enemyChoice)
-    {
-        RPSChoice correct = GetCounterChoice(enemyChoice);
-
-        CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
-
-        foreach (var c in all)
-        {
-            bool isCorrect = (c.choiceType == correct);
-
-            c.boxCollider.enabled = isCorrect;
-
-            if (c.blockerPNG != null)
-                c.blockerPNG.SetActive(!isCorrect);
-        }
-    }
-
     void ResetChoices()
     {
         CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
-
-        for (int i = 0; i < all.Length; i++)
+        foreach (var c in all) 
         {
-            var c = all[i];
             c.boxCollider.enabled = true;
-
             if (c.blockerPNG != null)
                 c.blockerPNG.SetActive(false);
+            }
 
-            if (blockerPNGs != null && blockerPNGs.Length == 3 && blockerPNGs[i] != null)
-                blockerPNGs[i].SetActive(false);
-        }
-
-        if (probabilityText != null)
-            probabilityText.text = "";
+        if (probabilityText != null) probabilityText.text = "";
     }
-
 
     public static RPSChoice GetCounterChoice(RPSChoice enemy)
     {
@@ -444,33 +394,20 @@ public CGRPSEnlarger BlessingButton;
     void ShowOnly(SpriteRenderer sprite)
     {
         HideAll();
-        if (sprite != null)
-            sprite.gameObject.SetActive(true);
+        if (sprite != null) sprite.gameObject.SetActive(true);
     }
 
     IEnumerator ShowDrawTemporarily(SpriteRenderer drawSprite, float duration)
     {
-        // Hide everything first
         HideAll();
-
-        // Show the draw sprite
-        if (drawSprite != null)
-            drawSprite.gameObject.SetActive(true);
-
-        // Wait for the duration
+        if (drawSprite != null) drawSprite.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);
-
         HideAll();
-
-        // Show neutral
-        if (enemyNeutral != null)
-            enemyNeutral.gameObject.SetActive(true);
+        if (enemyNeutral != null) enemyNeutral.gameObject.SetActive(true);
     }
 
     public void ActivatePredictionAbility()
     {
-        Debug.Log("ActivatePredictionAbility called, abilityReady=" + abilityReady);
-
         if (!abilityReady) return;
 
         abilityActive = true;
@@ -479,61 +416,50 @@ public CGRPSEnlarger BlessingButton;
         if (ProbabilityButton != null)
         {
             ProbabilityButton.boxCollider.enabled = true;
-
             Animator anim = ProbabilityButton.GetComponent<Animator>();
-        if (anim != null)
-        {
-            anim.Play(0, 0, 0f);
-            anim.speed = 0f;
-        }
+            if (anim != null)
+            {
+                anim.Play(0, 0, 0f);
+                anim.speed = 0f;
+            }
         }    
 
-    ShowEnemyProbabilities();
+        ShowEnemyProbabilities();
     }
 
     public void ActivateEliminationAbility()
-{
-    Debug.Log("ActivateEliminationAbility called, eliminationAbilityReady=" + eliminationAbilityReady);
-
-    if (!eliminationAbilityReady) return;
-
-    eliminationAbilityReady = false;
-    eliminationAbilityActive = true;
-
-    nextEnemyChoice = GetAdaptiveEnemyChoice();
-
-    if (probabilityText != null)
-        probabilityText.text = $"{nextEnemyChoice} : 100%";
-
-    RPSChoice correctPlayerChoice = GetCounterChoice(nextEnemyChoice);
-
-    CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
-    for (int i = 0; i < all.Length; i++)
     {
-        var c = all[i];
-        bool isCorrect = (c.choiceType == correctPlayerChoice);
+        if (!eliminationAbilityReady) return;
 
-        c.boxCollider.enabled = isCorrect;
+        eliminationAbilityReady = false;
+        eliminationAbilityActive = true;
 
-        if (blockerPNGs != null && blockerPNGs.Length == 3)
+        nextEnemyChoice = GetAdaptiveEnemyChoice();
+
+        if (probabilityText != null)
+            probabilityText.text = $"{nextEnemyChoice} : 100%";
+
+        RPSChoice correctPlayerChoice = GetCounterChoice(nextEnemyChoice);
+
+        CGRPSEnlarger[] all = { rockSprite, paperSprite, scissorsSprite };
+        foreach (var c in all)
         {
-            if (blockerPNGs[i] != null)
-                blockerPNGs[i].SetActive(!isCorrect);
-        }
-        else
-        {
+            bool isCorrect = (c.choiceType == correctPlayerChoice);
+
+            c.boxCollider.enabled = isCorrect;
+                
             if (c.blockerPNG != null)
                 c.blockerPNG.SetActive(!isCorrect);
         }
-    }
+            
 
-    Animator anim = EliminationButton.GetComponent<Animator>();
+        Animator anim = EliminationButton.GetComponent<Animator>();
         if (anim != null)
         {
             anim.Play(0, 0, 0f);
             anim.speed = 0f;
         }
-}
+    }
 
     public void ActivateBlessingAbility()
     {
@@ -542,31 +468,20 @@ public CGRPSEnlarger BlessingButton;
         winStreakReady = false;
         winStreakActive = true;
 
-        if (coffeeMeter != null)
-            coffeeMeter.Increase();
-
-        if (BlessingButton != null)
-            BlessingButton.boxCollider.enabled = true;
-
-        Debug.Log("Win Streak Power-Up Activated! Coffee increased!");
+        if (coffeeMeter != null) coffeeMeter.Increase();
+        if (BlessingButton != null) BlessingButton.boxCollider.enabled = true;
 
         playerWinStreak = 0;
 
         Animator anim = BlessingButton.GetComponent<Animator>();
-        if (anim != null)
-        {
-            anim.Play(0, 0, 0f);
-        }
+        if (anim != null) anim.Play(0, 0, 0f);
     }
-
 
     void ShowEnemyProbabilities()
     {
         if (!abilityActive) return;
 
-        float rockWeight = 1f;
-        float paperWeight = 1f;
-        float scissorsWeight = 1f;
+        float rockWeight = 1f, paperWeight = 1f, scissorsWeight = 1f;
 
         if (lastPlayerChoice.HasValue)
         {
@@ -589,15 +504,7 @@ public CGRPSEnlarger BlessingButton;
         Debug.Log($"Enemy Probabilities:\nRock: {rockPercent}%\nPaper: {paperPercent}%\nScissors: {scissorsPercent}%");
     }
 
-    void ShowForcedChoices()
-    {
-        RPSChoice forcedEnemyChoice = GetAdaptiveEnemyChoice();
-        
-        DisableWrongChoices(forcedEnemyChoice);
-        ShowEnemyProbabilities();
-    }
-
-        IEnumerator LoadSceneAfterDelay(string scene, float delay)
+    IEnumerator LoadSceneAfterDelay(string scene, float delay)
     {
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(scene);
@@ -606,7 +513,7 @@ public CGRPSEnlarger BlessingButton;
     IEnumerator LoadSceneWithTransition(string sceneName)
     {
         yield return new WaitForSeconds(4f);
-        
+
         if (transitionController.transition != null)
         {
             transitionController.transition.SetTrigger("Start");
@@ -615,6 +522,4 @@ public CGRPSEnlarger BlessingButton;
 
         SceneManager.LoadScene(sceneName);
     }
-
-
 }
