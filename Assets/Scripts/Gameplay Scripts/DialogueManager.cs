@@ -91,7 +91,6 @@ public class DialogueManager : MonoBehaviour
     {
         var line = dialogue.lines[index];
 
-        // BACKGROUND UPDATE
         if (line.newBackground != null)
             backgroundImage.sprite = line.newBackground;
 

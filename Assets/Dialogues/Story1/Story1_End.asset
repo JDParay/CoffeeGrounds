@@ -1,0 +1,579 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbeb3eab6d454254f94357fa81f14586, type: 3}
+  m_Name: Story1_End
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: Bill
+    speakerType: 2
+    text: Are you kidding me?!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: c269f2605bb8de744bf64fd2eb4a30a9, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: f85109ac0a9c2de4daf25a4cc5a988ac, type: 3}
+    rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
+    slideCharacterA: 1
+    slideADistance: 600
+    slideASpeed: 0.35
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 1
+    shakeIntensity: 20
+    shakeDuration: 0.25
+  - speaker: Cherri
+    speakerType: 2
+    text: HA! LOSER!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 603b470ef31556d40b14de5ad9d64215, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 4aecb68c6e82b814e833e6001bf482f5, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 0
+    text: 'I can''t believe I won that... '
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 0
+    text: But then again it's rock, paper, scissors.
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Bill
+    speakerType: 2
+    text: I call rig.
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 8d8500ef5f5888e4eb0ad31c391d758d, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: e22f7efe1ac07b542a4457b68c5be327, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 1
+    text: Rigged?! How would I even know you're every move...?
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 6795ed88595314c42af21579503828e1, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Bill
+    speakerType: 2
+    text: Oh don't play dumb, I can see right through your screen, wannabe!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 63c6810f4ba5c254197757d569203ac9, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Bill
+    speakerType: 2
+    text: cheater!!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 1
+    text: Dude, I don't know what you're talking about...
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 01d311cab2d4ca24db929f57311d4783, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 0916c0b42c97ba64096670d4938fcdd0, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Manager
+    speakerType: 2
+    text: Good first game! Good job, bud!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 0944cf13861c4b846b1c669ca4b9d44b, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c02d532cd65389649bee047a0fe8280d, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 1
+    text: It's Jude.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 65be4b61e9771814d8504aa999532707, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Manager
+    speakerType: 2
+    text: Well, Jude. You made it on the first round, that means you're moving on
+      to the next one later on the day!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: ed621837b884c0d4ca4ade7ae33a221b, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: f318a9d02ce9f644ebed4a609397195b, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Bill
+    speakerType: 2
+    text: W-wait, that's it? I just leave now??
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 04fe8c7cd63e59e4e9f855196d7b4fd3, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 09d53813a888c074d911108cede5c6de, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Manager
+    speakerType: 2
+    text: That or you can wait 'til our coffee machine is emotionally stable.
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: c8bf7b2d55997484bbe178999968edab, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 4b5522578c80b304faea72b343dad4cf, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Bill
+    speakerType: 2
+    text: Which is when exactly?
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: e22f7efe1ac07b542a4457b68c5be327, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Manager
+    speakerType: 2
+    text: With all the costumers and a lot of heavy orders... I'd say... 1 year?
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: b06aa48cdf3965c4a815f6da8771e035, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 2d43c10cf8059a84a9647463b2f71685, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 83b187646b658434a88d9db0090c670d, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 0
+    text: Groaning and complains floated across the arena.
+    useAltBox: 1
+    voiceOver: {fileID: 8300000, guid: f559541906da23047bfa73eddb3288a4, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 0
+    text: 80% of the people left, probably annoyed by the revelation.
+    useAltBox: 1
+    voiceOver: {fileID: 8300000, guid: f559541906da23047bfa73eddb3288a4, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Bill
+    speakerType: 2
+    text: 'And you didn''t care to give that information earlier!? '
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 63c6810f4ba5c254197757d569203ac9, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Manager
+    speakerType: 2
+    text: Well.. I wanted to play a game...
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: e9cd20a562ba2354dbbaf26f89b7554e, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 76ed1b4672a1acb42ac87c81e72e06ba, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Bill
+    speakerType: 2
+    text: 'Well I''m leaving! For good! '
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: c9ff645ff8b15574fab87a641090536c, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Bill
+    speakerType: 2
+    text: I can't believe this is how you treat a loyal costumer!!!!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 2128d727bae4d054d874b7eb486fbb26, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 0
+    text: And with that, there were 7.
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 0
+    text: Me, Cherri, the gray hoodie- Damon, and 5 other people I don't recognize
+      or know.
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 1
+    text: I'll guess I'll be going too...
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 01d311cab2d4ca24db929f57311d4783, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 6e97d387b458a194d8747a0ef564ca15, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Manager
+    speakerType: 2
+    text: Wait, you're going?? But you advanced to the semi-finals!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 98b689b7e58c328439abc13a1ff8f386, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: dd3d4d483e3002845b8f3559a10df8de, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 0
+    text: He pointed at a board with a bracket form tournament, with me leading.
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Manager
+    speakerType: 2
+    text: You can't just give up now, Jude!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: b06aa48cdf3965c4a815f6da8771e035, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 76ed1b4672a1acb42ac87c81e72e06ba, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Cherri
+    speakerType: 2
+    text: Yeah man! I wanna get the chance to beat you!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: c689dc6d3bd89884a87bc6514dc69247, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: cd4640ba150fddf4895543a03a51f74b, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Cherri
+    speakerType: 2
+    text: Come on!!
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 603b470ef31556d40b14de5ad9d64215, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 21300000, guid: 465a375156e77d64b95a8644cc275779, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 0
+    text: I guess I can stay...
+    useAltBox: 1
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 1257de255bfde21489c428cfc2992c43, type: 3}
+    rightCharacter: {fileID: 21300000, guid: 5a95e4bea8e0ab4478fc5e7fec17aeb2, type: 3}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 1
+    slideDistance: 600
+    slideSpeed: 0.35
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 1
+    text: Alright.
+    useAltBox: 0
+    voiceOver: {fileID: 0}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 21300000, guid: 65be4b61e9771814d8504aa999532707, type: 3}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  - speaker: Jude
+    speakerType: 1
+    text: I'll stay for another round.
+    useAltBox: 0
+    voiceOver: {fileID: 8300000, guid: 2f7b70e37ac88b54fa36ed734c1f9c4e, type: 3}
+    newBackground: {fileID: 0}
+    leftCharacter: {fileID: 0}
+    rightCharacter: {fileID: 0}
+    slideCharacterA: 0
+    slideADistance: 0
+    slideASpeed: 0
+    slideCharacterB: 0
+    slideDistance: 0
+    slideSpeed: 0
+    shakeBackground: 0
+    shakeIntensity: 0
+    shakeDuration: 0
+  nextSceneName: StoryModeSelector

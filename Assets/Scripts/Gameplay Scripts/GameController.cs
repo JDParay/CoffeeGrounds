@@ -39,7 +39,7 @@ public class RPSGameController : MonoBehaviour
     public CGRPSEnlarger BlessingButton;
     private int playerWinStreak = 0;
     private int playerDrawStreak = 0;
-    private int playerFailStreak = 3;
+    private int playerFailStreak = 0;
     private bool abilityReady = false;
     private bool abilityActive = false; 
     private bool eliminationAbilityReady = false; 
@@ -68,7 +68,7 @@ public class RPSGameController : MonoBehaviour
     public string loseSceneName;
 
     [Header("History UI")]
-    public HistoryManager historyUI; // Reference to your history manager
+    public HistoryManager historyUI;
 
     private RPSChoice? lastPlayerChoice = null;
     public TMPro.TextMeshProUGUI probabilityText;
@@ -76,7 +76,6 @@ public class RPSGameController : MonoBehaviour
 
     void Start()
     {
-        // Subscribe clicks
         rockSprite.OnClicked += () => PlayerChose(RPSChoice.Rock);
         paperSprite.OnClicked += () => PlayerChose(RPSChoice.Paper);
         scissorsSprite.OnClicked += () => PlayerChose(RPSChoice.Scissors);
@@ -187,7 +186,6 @@ public class RPSGameController : MonoBehaviour
             playerDrawStreak = 0;
             playerFailStreak = 0;
 
-            // Add history
             historyUI?.AddResult(playerChoice.ToString(), enemyChoice.ToString(), "WIN");
 
             if (playerWinStreak >= 5 && !winStreakReady)
@@ -211,7 +209,6 @@ public class RPSGameController : MonoBehaviour
             playerWinStreak = 0;
             playerDrawStreak = 0;
 
-            // Add history
             historyUI?.AddResult(playerChoice.ToString(), enemyChoice.ToString(), "LOST");
 
             if (playerFailStreak >= 4 && !eliminationAbilityReady)

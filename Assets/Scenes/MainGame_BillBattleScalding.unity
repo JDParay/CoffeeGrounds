@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 306682269}
-  maxValue: 100
+  maxValue: 200
   minValue: 0
   currentValue: 50
 --- !u!114 &306682269
@@ -2146,8 +2146,8 @@ MonoBehaviour:
   finalLoseLine: {fileID: 8300000, guid: 303e48336e5b11c4cb3018c2f851fa9c, type: 3}
   afkTime: 8
   transitionController: {fileID: 319729655}
-  winSceneName: Menu
-  loseSceneName: MainGame_BillBattle
+  winSceneName: Story2
+  loseSceneName: Story1_AltEnd
   historyUI: {fileID: 1342717663}
   probabilityText: {fileID: 906500119}
 --- !u!4 &373645471
@@ -3395,6 +3395,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629017138}
   m_CullTransparentMesh: 1
+--- !u!1 &661892350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661892352}
+  - component: {fileID: 661892351}
+  m_Layer: 0
+  m_Name: BGMSTOP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &661892351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661892350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad44cf8a81a831458eb9042f205e68b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopSceneIndex: 14
+--- !u!4 &661892352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661892350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 973.0179, y: 648.3848, z: -8.751025}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &669513393
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,7 +5527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '100
+  m_text: '200
 
 
 
@@ -7388,3 +7433,4 @@ SceneRoots:
   - {fileID: 669513395}
   - {fileID: 373645471}
   - {fileID: 1342717664}
+  - {fileID: 661892352}

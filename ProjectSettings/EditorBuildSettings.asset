@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Category - Story or Gameplay.unity
     guid: ae2a92bbb8e731147a1ad8ae0412fe5f
   - enabled: 1
+    path: Assets/Scenes/StoryModeSelector.unity
+    guid: 70167f6f514c96046a96b10000c9c52e
+  - enabled: 1
     path: Assets/Scenes/Category - Standard or Tricky.unity
     guid: 8f9e02e43f81b33469bbecf6a7d89cba
   - enabled: 1
@@ -23,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story1_AltEnd.unity
     guid: efe180b072395374e8e72681a15f63bc
+  - enabled: 1
+    path: Assets/Scenes/Story1_End.unity
+    guid: c2346b936720e5e42b19ca76f0db2300
   - enabled: 1
     path: Assets/Scenes/Story2.unity
     guid: 822ea1aba754e7d4082585d35a72c87e
@@ -38,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainGame_DamonBattle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainGame_BillBattleRegular.unity
+    guid: 91883cd7e989df5459f3f8554a9623b7
+  - enabled: 1
+    path: Assets/Scenes/MainGame_BillBattleScalding.unity
+    guid: b99a4530eeb661148a9e353b5b70b3d8
   m_configObjects: {}
